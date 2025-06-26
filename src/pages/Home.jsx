@@ -138,7 +138,6 @@ const Home = () => {
             ))}
           </div>
 
-          {/* Past Events */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -224,7 +223,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Event Announcement Popup */}
+      {/* Event Announcement Popup... Important line hai hamesha update karna hai and remove karna hai is no event*/}
       {showEventPopup && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -240,7 +239,6 @@ const Home = () => {
             className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-md w-full mx-4 overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Header */}
             <div className="bg-gradient-to-r from-green-500 to-blue-500 p-6 text-white relative">
               <button
                 onClick={closeEventPopup}
@@ -259,14 +257,13 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Content */}
             <div className="p-6">
               <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">
                 🎉 Exciting Events Coming Up!
               </h4>
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                 Don't miss out on our latest coding competitions, workshops, and tech talks. 
-                Join fellow geeks and level up your skills!
+                Join fellow geeks and level up your skills!... This is the Test Pop Up currently there is not Events Hosted
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3">

@@ -30,7 +30,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* About GFG Section */}
       <section className="py-20 bg-white dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -120,7 +119,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Achievements Section */}
       <section className="py-20 bg-white dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -130,12 +128,8 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              Our Achievements
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Milestones and recognition that reflect our commitment to excellence
-            </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Our Achievements</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Milestones and recognition that reflect our commitment to excellence</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -160,7 +154,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Values Section */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -170,12 +163,8 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              Our Values
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              The principles that guide our community and shape our culture
-            </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Our Values</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">The principles that guide our community and shape our culture</p>
           </motion.div>          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((value, index) => (
               <motion.div

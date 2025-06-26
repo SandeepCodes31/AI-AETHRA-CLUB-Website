@@ -175,7 +175,6 @@ const Team = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {hasTeamData ? (
             <div className="space-y-16">
-              {/* Core Members Section */}
               {core.length > 0 && (
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
@@ -183,9 +182,7 @@ const Team = () => {
                   transition={{ duration: 0.6 }}
                 >
                   <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                      Core Members
-                    </h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Core Members</h2>
                     <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto rounded-full"></div>
                   </div>                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 justify-items-center">
                     {core.map((member, index) => renderMemberCard(member, index, 0))}
@@ -199,9 +196,7 @@ const Team = () => {
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
                   <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                      Extended Core Members
-                    </h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Extended Core Members</h2>
                     <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto rounded-full"></div>
                   </div>                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 justify-items-center">
                     {extended.map((member, index) => renderMemberCard(member, index, 0.2))}
@@ -216,9 +211,7 @@ const Team = () => {
                   transition={{ duration: 0.6, delay: 0.4 }}
                 >
                   <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                      Working Committee
-                    </h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Working Committee</h2>
                     <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto rounded-full"></div>
                   </div>                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 justify-items-center">
                     {committee.map((member, index) => renderMemberCard(member, index, 0.4))}
@@ -227,7 +220,6 @@ const Team = () => {
               )}
             </div>
           ) : (
-            // No Data Found State
             <motion.div
               key={`no-data-${selectedYear}`}
               initial={{ opacity: 0, y: 30 }}
@@ -238,12 +230,8 @@ const Team = () => {
               <div className="w-24 h-24 bg-gradient-to-r from-gray-200 to-gray-300 dark:from-gray-600 dark:to-gray-700 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Users className="w-12 h-12 text-gray-400 dark:text-gray-500" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-600 dark:text-gray-400 mb-4">
-                No Team Data Found
-              </h3>
-              <p className="text-gray-500 dark:text-gray-500 mb-6 max-w-md text-center">
-                No team members are available for {selectedYear}. Please check back later or select a different year.
-              </p>
+              <h3 className="text-2xl font-bold text-gray-600 dark:text-gray-400 mb-4">No Team Data Found</h3>
+              <p className="text-gray-500 dark:text-gray-500 mb-6 max-w-md text-center">No team members are available for {selectedYear}. Please check back later or select a different year.</p>
               <div className="flex flex-wrap justify-center gap-2">
                 {years.filter(year => year !== selectedYear && teamData[year] && teamData[year].length > 0).map((year) => (
                   <motion.button
@@ -272,9 +260,7 @@ const Team = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Want to Join Our Team?</h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              We're always looking for passionate individuals to join our growing community
-            </p>
+            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">We're always looking for passionate individuals to join our growing community</p>
             <motion.button 
               onClick={applynow}
               className="bg-white text-green-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg"

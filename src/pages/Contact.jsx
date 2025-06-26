@@ -116,7 +116,6 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
-      {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-r from-green-500/10 to-blue-500/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -125,80 +124,36 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-6">
-              Contact Us
-            </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              Have questions, suggestions, or want to collaborate? We'd love to hear from you!
-            </p>
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-6">Contact Us</h1>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">Have questions, suggestions, or want to collaborate? We'd love to hear from you!</p>
           </motion.div>
         </div>
       </section>
 
-      {/* Contact Content */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8"
             >
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Send us a Message
-              </h2>
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Send us a Message</h2>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors"
-                    placeholder="Enter your full name"
-                  />
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Your Name</label>
+                  <input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} required className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors" placeholder="Enter your full name"/>
                 </div>
-
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors"
-                    placeholder="Enter your email address"
-                  />
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email Address</label>
+                  <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} required className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors" placeholder="Enter your email address"/>
                 </div>
-
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors resize-none"
-                    placeholder="Tell us about your query, suggestion, or collaboration idea..."
-                  />
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                  <textarea id="message" name="message" value={formData.message} onChange={handleInputChange} required rows={6} className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors resize-none" placeholder="Tell us about your query, suggestion, or collaboration idea..."/>
                 </div>
-
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
@@ -222,8 +177,6 @@ const Contact = () => {
                 </motion.button>
               </form>
             </motion.div>
-
-            {/* Contact Information */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -231,17 +184,10 @@ const Contact = () => {
               className="space-y-8"
             >
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                  Get in Touch
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  Whether you're a student looking to join our community, a fellow developer 
-                  wanting to collaborate, or an organization interested in partnerships, 
-                  we're here to connect and create amazing things together.
-                </p>
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Get in Touch</h2>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed"> Whether you're a student looking to join our community, a fellow developer  wanting to collaborate, or an organization interested in partnerships,  we're here to connect and create amazing things together.</p>
               </div>
 
-              {/* Contact Info Cards */}
               <div className="space-y-4">
                 {contactInfo.map((info, index) => {
                   const IconComponent = info.icon;
@@ -273,14 +219,9 @@ const Contact = () => {
                 })}
               </div>
 
-              {/* Social Links */}
               <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-                  Follow Us
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-6 text-sm">
-                  Stay updated with our latest events, projects, and community highlights
-                </p>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Follow Us</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-6 text-sm">Stay updated with our latest events, projects, and community highlights</p>
                 
                 <div className="grid grid-cols-2 gap-4">
                   {socialLinks.map((social, index) => {

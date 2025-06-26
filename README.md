@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+
 # 🚀 GFG TCET - Official Chapter Website
 
 <div align="center">
@@ -380,15 +382,14 @@ export default defineConfig({
   **Academic Year**: 2025-2026  
   **Institution**: Thakur College of Engineering and Technology
   
-  [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/prince-maurya)
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/prince-maurya)
-  [![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white)](https://prince-maurya.dev)
+  [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Prince200510/)
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/prince-maurya-810b83277/)
+  [![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white)](https://prince6.netlify.app/)
 </div>
 
 ### **About the Developer**
 
 Prince Maurya is a passionate full-stack developer and student at TCET, specializing in modern web technologies. This project represents his dedication to creating innovative, user-friendly web applications that serve the college community and promote coding culture.
-
 
 ### **Project Highlights**
 
@@ -432,3 +433,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
   *This website is part of the GeeksforGeeks Student Chapter program at Thakur College of Engineering and Technology.*
   
 </div>
+=======
+# GFG-TCET
+🎓 GFG-TCET Official Website – A responsive and dynamic website built for the GeeksforGeeks Student Chapter at Thakur College of Engineering and Technology (TCET), showcasing events, team members, resources, and more.
+>>>>>>> b75ed84d0627ff3a2451313a128e967428a01f89

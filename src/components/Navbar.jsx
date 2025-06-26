@@ -37,7 +37,6 @@ const Navbar = () => {
     }, 300); 
   };
   const handleDropdownClick = () => {
-    // Clear any pending timeouts when clicking
     if (dropdownTimeoutRef.current) {
       clearTimeout(dropdownTimeoutRef.current);
     }
@@ -149,7 +148,7 @@ const Navbar = () => {
                             layoutId="activeNav"
                           />
                         )}
-                      </Link>                      {/* Team Dropdown */}
+                      </Link>                      
                       {isTeamDropdownOpen && (
                         <motion.div
                           initial={{ opacity: 0, y: -10 }}
@@ -165,7 +164,7 @@ const Navbar = () => {
                               to="/team"
                               className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 transition-colors first:rounded-t-xl"
                               onClick={handleDropdownClick}
-                              onMouseDown={(e) => e.preventDefault()} // Prevent focus issues
+                              onMouseDown={(e) => e.preventDefault()} 
                             >
                               All Team Members
                             </Link>
@@ -176,7 +175,7 @@ const Navbar = () => {
                                 to={`/team?year=${year}`}
                                 className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 transition-colors last:rounded-b-xl"
                                 onClick={handleDropdownClick}
-                                onMouseDown={(e) => e.preventDefault()} // Prevent focus issues
+                                onMouseDown={(e) => e.preventDefault()} 
                               >
                                 Team {year}
                               </Link>
@@ -210,7 +209,6 @@ const Navbar = () => {
                 </div>
               ))}
               
-              {/* Theme Toggle */}
               <button
                 onClick={toggleTheme}
                 className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors"
@@ -224,7 +222,6 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-2">
             <button
               onClick={toggleTheme}
@@ -248,7 +245,7 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-      </div>      {/* Mobile Navigation */}
+      </div>      
       <motion.div
         className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}
         initial={{ opacity: 0, height: 0 }}
@@ -279,7 +276,6 @@ const Navbar = () => {
                     />
                   </button>
                   
-                  {/* Mobile Team Dropdown */}
                   {isMobileTeamDropdownOpen && (
                     <motion.div
                       initial={{ opacity: 0, height: 0 }}
