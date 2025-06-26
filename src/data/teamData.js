@@ -1,5 +1,5 @@
 // Team Members Data 2022-2023 2023-2024 2024-2025 2025-2026
-import Harsh_Jha from '../assets/Team-2022-2023/harsh_jha.jpg';
+import Harsh_Jha from '../assets/Team-2022-2023/Harsh_Jha.jpg';
 import Khushi_Gupta from '../assets/Team-2022-2023/khushi_gupta.jpg';
 import Ankit_Maurya from '../assets/Team-2022-2023/ankit.jpg';
 import Eshan_Kalra from '../assets/Team-2022-2023/Eshan_Karla.jpg';
