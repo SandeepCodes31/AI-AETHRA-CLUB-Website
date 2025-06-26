@@ -22,7 +22,7 @@ const Contact = () => {
   e.preventDefault();
   setIsSubmitting(true);
 
-  const url = "https://script.google.com/macros/s/AKfycbwZx_0ONXnvFAN3WRnYPqw6Ry2wWAn3Z9urbtLkyKl-bNaRD3leP08XZpRcg33APSeQ/exec";
+  const url = "https://script.google.com/macros/s/AKfycbzJPclhs98PSgyb2UvaR4kY58ydeockzhx2Lrm7kXKvneK8-Jw_UkC0dg9afxbQ1d8m_g/exec";
 
   try {
     const response = await fetch(url, {
