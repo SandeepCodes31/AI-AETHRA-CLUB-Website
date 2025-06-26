@@ -1,0 +1,10 @@
+/* App.css - Additional custom styles if needed */
+
+/* You can add any additional custom styles here that complement Tailwind CSS */
+/* Most styling should be done via Tailwind utility classes */
+
+.app {
+  min-height: 100vh;
+}
+
+/* Any custom component styles can go here */
