@@ -97,7 +97,7 @@ const Events = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-6">Events</h1>
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-6 dark:from-green-300 dark:to-blue-300">Events</h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">Join our workshops, contests, and seminars to enhance your skills and connect with fellow developers</p>
           </motion.div>
         </div>
@@ -143,13 +143,13 @@ const Events = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                    className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full"
                   >
                     <div className="h-48 bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center">
                       <Calendar className="w-16 h-16 text-white" />
                     </div>
 
-                    <div className="p-6">
+                    <div className="p-6 flex flex-col flex-grow">
                       <div className="flex items-center justify-between mb-4">
                         <span className={`px-3 py-1 rounded-full text-sm font-medium ${getCategoryColor(event.category)}`}>
                           {event.category}
@@ -162,7 +162,7 @@ const Events = () => {
                       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
                         {event.title}
                       </h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">{event.description}</p>
+                      <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed flex-grow">{event.description}</p>
                       <div className="space-y-2 mb-6">
                         <div className="flex items-center text-gray-600 dark:text-gray-400">
                           <Calendar className="w-4 h-4 mr-2" />
@@ -181,7 +181,7 @@ const Events = () => {
                         href={event.registrationLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full bg-gradient-to-r from-green-500 to-blue-500 text-white py-3 px-4 rounded-lg font-semibold text-center inline-flex items-center justify-center space-x-2 hover:from-green-600 hover:to-blue-600 transition-all duration-300"
+                        className="w-full bg-gradient-to-r from-green-500 to-blue-500 text-white py-3 px-4 rounded-lg font-semibold text-center inline-flex items-center justify-center space-x-2 hover:from-green-600 hover:to-blue-600 transition-all duration-300 mt-auto"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                       >
