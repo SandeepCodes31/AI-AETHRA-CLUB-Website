@@ -238,6 +238,7 @@ const Team = () => {
                     key={year}
                     onClick={() => {
                       if (year !== selectedYear) {
+                        sessionStorage.setItem('react-router-navigation', 'true');
                         navigate(`/team?year=${year}`);
                       }
                     }}
@@ -355,6 +356,7 @@ const Team = () => {
                   <motion.button
                     key={year}
                     onClick={() => {
+                      sessionStorage.setItem('react-router-navigation', 'true');
                       navigate(`/team?year=${year}`);
                     }}
                     className="px-4 py-2 bg-green-100 hover:bg-green-200 dark:bg-green-900 dark:hover:bg-green-800 text-green-700 dark:text-green-300 rounded-full text-sm font-medium transition-colors"

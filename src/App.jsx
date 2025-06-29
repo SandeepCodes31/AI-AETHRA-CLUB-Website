@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -18,6 +18,8 @@ function App() {
           <Route path="/team" element={<Team />} />
           <Route path="/events" element={<Events />} />
           <Route path="/contact" element={<Contact />} />
+          {/* Fallback route - redirect any unknown paths to home */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
     </Router>
