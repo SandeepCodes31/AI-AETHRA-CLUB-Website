@@ -10,7 +10,6 @@ const Team = () => {
   const location = useLocation();
   const navigate = useNavigate();
   
-  // Get year from URL or default to current year
   const getYearFromUrl = () => {
     const searchParams = new URLSearchParams(location.search);
     const yearParam = searchParams.get('year');
@@ -47,6 +46,25 @@ const Team = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      .extended-core-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px;
+        max-width: 1600px;
+        margin: 0 auto;
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
   const applynow = () => {
     Swal.fire({
       icon: 'warning',
@@ -79,9 +97,8 @@ const Team = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: delay + index * 0.1 }}
       whileHover={{ y: -10 }}
-      className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-700 dark:to-gray-800 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 h-[250px] flex flex-col mx-auto w-full max-w-[280px]"
+      className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-700 dark:to-gray-800 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 h-[250px] flex flex-col w-[220px] flex-shrink-0"
     >
-      {/* Profile Image */}
       <div className="relative mb-4 flex-shrink-0">        
         <div className="w-24 h-24 bg-gradient-to-r from-green-400 to-blue-500 rounded-full mx-auto flex items-center justify-center overflow-hidden">          
           <img 
@@ -168,7 +185,48 @@ const Team = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
-      <section className="pt-20 pb-16 bg-gradient-to-r from-green-500/10 to-blue-500/10">
+      <div className="pt-16 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="py-4 flex items-center justify-between"
+          >
+            <div className="flex items-center space-x-4">
+              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                Academic Year:
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {years.map((year) => (
+                  <motion.button
+                    key={year}
+                    onClick={() => {
+                      if (year !== selectedYear) {
+                        navigate(`/team?year=${year}`);
+                      }
+                    }}
+                    className={`px-4 py-2 rounded-full font-medium text-xs transition-all duration-300 ${
+                      selectedYear === year
+                        ? 'bg-gradient-to-r from-green-500 to-blue-500 text-white shadow-md'
+                        : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                    }`}
+                    whileHover={{ scale: selectedYear === year ? 1 : 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {year}
+                  </motion.button>
+                ))}
+              </div>
+            </div>
+            <div className="text-xs text-gray-500 dark:text-gray-400 hidden sm:block">
+              Viewing: <span className="font-semibold text-green-600 dark:text-green-400">{selectedYear}</span>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      <section className="pt-8 pb-12 bg-gradient-to-r from-green-500/10 to-blue-500/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -176,57 +234,18 @@ const Team = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-6 dark:from-green-300 dark:to-blue-300">
+            
+            <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-6 mt-0 dark:from-green-300 dark:to-blue-300">
               Our Team: {selectedYear} 
             </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-20 text-gray-600 dark:text-gray-400 max-w-4xl mx-auto leading-relaxed">
               Every member of the society has always been driven and committed to achieving their goals, fostering a healthy workplace culture. Our mutual support and desire to assist one another in any way possible is what makes GFG-TCET a "Team". Take a look at our diverse team of innovative thinkers that want to make a difference. Here we go!
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Year Navigation Section */}
-      <section className="py-8 bg-gradient-to-r from-green-50 to-blue-50 dark:from-gray-800 dark:to-gray-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
-              Browse Teams by Academic Year
-            </h3>
-            <div className="flex flex-wrap justify-center gap-3">
-              {years.map((year) => (
-                <motion.button
-                  key={year}
-                  onClick={() => {
-                    if (year !== selectedYear) {
-                      navigate(`/team?year=${year}`);
-                    }
-                  }}
-                  className={`px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 ${
-                    selectedYear === year
-                      ? 'bg-gradient-to-r from-green-500 to-blue-500 text-white shadow-lg scale-105'
-                      : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600 shadow-md hover:shadow-lg'
-                  }`}
-                  whileHover={{ scale: selectedYear === year ? 1.05 : 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Team {year}
-                </motion.button>
-              ))}
-            </div>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
-              Currently viewing: <span className="font-semibold text-green-600 dark:text-green-400">Team {selectedYear}</span>
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-white dark:bg-gray-800">
+      <section className="py-10 bg-white dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {hasTeamData ? (
             <motion.div 
@@ -245,7 +264,8 @@ const Team = () => {
                   <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Core Members</h2>
                     <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto rounded-full"></div>
-                  </div>                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 justify-items-center">
+                  </div>                  
+                  <div className="flex flex-wrap justify-center gap-6">
                     {core.map((member, index) => renderMemberCard(member, index, 0))}
                   </div>
                 </motion.div>
@@ -259,7 +279,9 @@ const Team = () => {
                   <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Extended Core Members</h2>
                     <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto rounded-full"></div>
-                  </div>                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 justify-items-center">
+                  </div>                  <div 
+                    className="extended-core-container"
+                  >
                     {extended.map((member, index) => renderMemberCard(member, index, 0.2))}
                   </div>
                 </motion.div>
@@ -274,7 +296,7 @@ const Team = () => {
                   <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Working Committee</h2>
                     <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto rounded-full"></div>
-                  </div>                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 justify-items-center">
+                  </div>                  <div className="flex flex-wrap justify-center gap-6">
                     {committee.map((member, index) => renderMemberCard(member, index, 0.4))}
                   </div>
                 </motion.div>
@@ -313,7 +335,6 @@ const Team = () => {
         </div>
       </section>
 
-      {/* Join Team CTA */}
       <section className="py-20 bg-gradient-to-r from-green-500 to-blue-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
