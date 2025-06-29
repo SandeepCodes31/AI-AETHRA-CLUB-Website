@@ -15,6 +15,7 @@ const Navbar = () => {
 
   const handleNavigation = () => {
     sessionStorage.setItem('react-router-navigation', 'true');
+    // Clear the popup seen flag so popup can show again on refresh
     sessionStorage.removeItem('home-popup-seen');
   };
 
@@ -140,26 +141,24 @@ const Navbar = () => {
         }}
         transition={{ duration: 0.3 }}
       >
-        <div className="bg-white dark:bg-gray-900 shadow-lg">
-          <div className="px-4 pt-2 pb-3 space-y-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${
-                  location.pathname === item.path || (item.name === 'Team' && location.pathname.startsWith('/team'))
-                    ? 'text-green-600 bg-green-50 dark:text-green-400 dark:bg-green-900/20'
-                    : 'text-gray-700 hover:text-green-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-green-400 dark:hover:bg-gray-800'
-                }`}
-                onClick={() => {
-                  setIsOpen(false);
-                  handleNavigation();
-                }}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
+        <div className="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-gray-900 shadow-lg">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              to={item.path}
+              className={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${
+                location.pathname === item.path || (item.name === 'Team' && location.pathname.startsWith('/team'))
+                  ? 'text-green-600 bg-green-50 dark:text-green-400 dark:bg-green-900/20'
+                  : 'text-gray-700 hover:text-green-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-green-400 dark:hover:bg-gray-800'
+              }`}
+              onClick={() => {
+                setIsOpen(false);
+                handleNavigation();
+              }}
+            >
+              {item.name}
+            </Link>
+          ))}
         </div>
       </motion.div>
     </motion.nav>

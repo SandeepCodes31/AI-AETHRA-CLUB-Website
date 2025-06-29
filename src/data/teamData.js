@@ -1,6 +1,6 @@
 // Team Members Data 2022-2023 2023-2024 2024-2025 2025-2026
-import Harsh_Jha from '../assets/Team-2022-2023/Harsh_Jha.jpg';
-import Khushi_Gupta from '../assets/Team-2022-2023/Khushi_Gupta.jpg';
+import Harsh_Jha from '../assets/Team-2022-2023/harsh_jha.jpg';
+import Khushi_Gupta from '../assets/Team-2022-2023/khushi_gupta.jpg';
 import Ankit_Maurya from '../assets/Team-2022-2023/ankit.jpg';
 import Eshan_Kalra from '../assets/Team-2022-2023/Eshan_Karla.jpg';
 import Vishal_Rawat from '../assets/Team-2022-2023/Vishal_Rawat.jpg';
@@ -88,7 +88,7 @@ export const teamData = {
   ],
   '2024-2025': [],
   '2023-2024': [],
-  '2022-2023': [    
+   '2022-2023': [    
     {
       id: 1,
       name: 'Harsh Jha',
@@ -245,6 +245,7 @@ export const teamData = {
   ],
 };
 
+// Core team members for home page preview
 export const coreTeamMembers = [
   {
     name: 'Rahul Sharma',
@@ -268,4 +269,5 @@ export const coreTeamMembers = [
   }
 ];
 
-export const getAvailableYears = () => Object.keys(teamData).sort((a, b) => b - a); 
+// Helper function to get available years
+export const getAvailableYears = () => Object.keys(teamData).sort((a, b) => b - a); // Sort years in descending order
