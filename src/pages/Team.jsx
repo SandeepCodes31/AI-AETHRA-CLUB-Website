@@ -20,10 +20,6 @@ const Team = () => {
   const [selectedYear, setSelectedYear] = useState(getYearFromUrl());
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [imageErrors, setImageErrors] = useState({});
-
-  useEffect(() => {
-    console.log('imageErrors state updated:', imageErrors);
-  }, [imageErrors]);
   const dropdownRef = useRef(null);
 
   useEffect(() => {
@@ -97,7 +93,6 @@ const Team = () => {
   const currentTeamData = teamData[selectedYear] || [];
   const { core, extended, committee } = organizeTeamMembers(currentTeamData);
   const hasTeamData = currentTeamData.length > 0;  const handleImageError = (memberId) => {
-    console.log('Image error for member:', memberId); // Debug log
     setImageErrors(prev => ({
       ...prev,
       [memberId]: true
@@ -106,7 +101,12 @@ const Team = () => {
 
   const renderMemberCard = (member, index, delay = 0) => {
     const hasImageError = imageErrors[member.id] || false;
-    console.log(`Member ${member.name} (ID: ${member.id}): hasImageError = ${hasImageError}`); // Debug log
+    
+    // Check if the image source is valid (not a broken path)
+    const isValidImageSrc = member.image && 
+                           member.image !== '/broken-image.jpg' && 
+                           !member.image.includes('broken-image') &&
+                           member.image !== '';
     
     return (
     <motion.div
@@ -119,17 +119,19 @@ const Team = () => {
     >
       <div className="relative mb-4 flex-shrink-0">        
         <div className="w-24 h-24 bg-gradient-to-r from-green-400 to-blue-500 rounded-full mx-auto flex items-center justify-center overflow-hidden">          
-          {!hasImageError ? (
+          {!hasImageError && isValidImageSrc ? (
             <img
               className="w-full h-full object-cover rounded-full"
               src={member.image}
               alt={member.name}
               onError={(e) => {
-                console.log('Image onError triggered for:', member.name);
                 e.target.style.display = 'none';
                 handleImageError(member.id);
               }}
-              onLoad={() => console.log('Image loaded successfully for:', member.name)}
+              onLoad={(e) => {
+                // Ensure the image is visible when it loads successfully
+                e.target.style.display = 'block';
+              }}
             />
           ) : (
             <Users className="w-12 h-12 text-white" />

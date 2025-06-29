@@ -55,7 +55,7 @@ export const teamData = {
       id: 1,
       name: 'Devansh Tiwari',
       role: 'Chairperson',
-      image: devansh_tiwari1, 
+      image: devansh_tiwari1,
       bio: 'Learning with purpose, working with heart, always here to help :)',
       github: 'https://github.com/DevanshTiwari787',
       linkedin: 'https://www.linkedin.com/in/devansh-tiwari-b42761300/',
@@ -69,7 +69,7 @@ export const teamData = {
       bio: 'N.A.',
       github: 'https://github.com/',
       linkedin: 'https://www.linkedin.com/in/',
-      leetcode: 'https://leetcode.com/u/',
+      leetcode: 'https://leetcode.com/u/hardikb31/',
     },
     {
       id: 3,
