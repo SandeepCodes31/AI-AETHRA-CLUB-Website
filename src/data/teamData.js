@@ -21,7 +21,7 @@ import abhilash from '../assets/Team-2022-2023/abhilash.jpg';
 // Team Members 2024-2025
 import khushi_tiwari from '../assets/Team-2024-2025/photo/khushi_tiwari.png';
 import ayesha_singh from '../assets/Team-2024-2025/photo/ayesha_singh.png';
-import shivam_thakur from '../assets/Team-2024-2025/photo/shivam_thakur.jpeg';
+import shivam_thakur from '../assets/Team-2024-2025/photo/shivam_thakur.jpg';
 import aman_maurya from '../assets/Team-2024-2025/photo/aman_maurya.png';
 import aishwarya_jadhav from '../assets/Team-2024-2025/photo/aishwarya_jadhav.png';
 import siddhi_naik from '../assets/Team-2024-2025/photo/siddhi_naik.png';
@@ -48,6 +48,9 @@ import prince_maurya_10 from  '../assets/Team-2025-2026/photo/prince_maurya_10.j
 import sanju_chauhan from '../assets/Team-2025-2026/photo/sanju_chauhan.jpg';
 import adhithya_nair from '../assets/Team-2025-2026/photo/adhithya_nair.png';
 import ravishankar_kanaki from '../assets/Team-2025-2026/photo/ravishankar_kanaki.jpg';
+import rudra_umatiya from '../assets/Team-2025-2026/photo/rudra_umatiya.jpeg';
+import inayat_shaikh from '../assets/Team-2025-2026/photo/inayat_shaikh.png';
+import ayush_tiwari from '../assets/Team-2025-2026/photo/ayush_tiwari.jpg';
 
 export const teamData = {
   '2025-2026': [
@@ -66,20 +69,18 @@ export const teamData = {
       name: 'Hardik Bansal',
       role: 'Vice Chairperson',
       image: hardik_bansal,
-      bio: 'N.A.',
-      github: 'https://github.com/',
-      linkedin: 'https://www.linkedin.com/in/',
+      bio: 'Passionate about coding and fostering a strong tech community',
+      github: 'https://github.com/hardikbansal31',
+      linkedin: 'https://www.linkedin.com/in/hardik-bansal-08aa2727a/',
       leetcode: 'https://leetcode.com/u/hardikb31/',
     },
     {
       id: 3,
       name: 'Inayatulla Shaikh',
       role: 'Event Head',
-      image: '/broken-image.jpg',
-      bio: 'N.A.',
-      github: 'https://github.com/',
-      linkedin: 'https://www.linkedin.com/in/',
-      leetcode: 'https://leetcode.com/u/',
+      image: inayat_shaikh,
+      bio: 'Trying to transform knowledge into solutions that matter...',
+      linkedin: 'https://www.linkedin.com/in/inayatullashaikh',
     },
     {
       id: 4,
@@ -95,11 +96,11 @@ export const teamData = {
       id: 5,
       name: 'Ayush Tiwari',
       role: 'Marketing Head',
-      image: '/broken-image.jpg',
-      bio: 'N.A.',
-      github: 'https://github.com/',
-      linkedin: 'https://www.linkedin.com/in/',
-      leetcode: 'https://leetcode.com/u/',
+      image: ayush_tiwari,
+      bio: 'Tech enthusiast',
+      github: 'https://github.com/ayushtiwari420',
+      linkedin: 'http://linkedin.com/in/ayush-tiwari-779947230',
+      leetcode: 'https://leetcode.com/u/tiwari_ayush/',
     },
     {
       id: 6,
@@ -126,7 +127,7 @@ export const teamData = {
       name: 'Prince Maurya',
       role: 'Web Head',
       image: prince_maurya_10,
-      bio: 'Tech enthusiast skilled in React, Node.js, Python, AI/ML, Blockchain.',
+      bio: 'Tech enthusiast skilled in React, Python, AI/ML, Blockchain.',
       github: 'https://github.com/Prince200510',
       linkedin: 'https://www.linkedin.com/in/prince-maurya-810b83277/',
       leetcode: 'https://leetcode.com/u/prince_maurya_10/',
@@ -135,11 +136,9 @@ export const teamData = {
       id: 9,
       name: 'Rudra Umatiya',
       role: 'PR Outreach Head',
-      image: '/broken-image.jpg',
-      bio: 'N.A.',
-      github: 'https://github.com/',
-      linkedin: 'https://www.linkedin.com/in/',
-      leetcode: 'https://leetcode.com/',
+      image: rudra_umatiya,
+      bio: 'Currently starring in a reality show called My Life. It’s low-budget.',
+      linkedin: 'https://www.linkedin.com/in/rudra-umatiya-a18903249?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     },
     {
       id: 10,

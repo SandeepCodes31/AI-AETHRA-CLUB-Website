@@ -1,6 +1,6 @@
 import khushi_tiwari from '../assets/Team-2024-2025/photo/khushi_tiwari.png';
 import ayesha_singh from '../assets/Team-2024-2025/photo/ayesha_singh.png';
-import shivam_thakur from '../assets/Team-2024-2025/photo/shivam_thakur.jpeg';
+import shivam_thakur from '../assets/Team-2024-2025/photo/shivam_thakur.jpg';
 import aman_maurya from '../assets/Team-2024-2025/photo/aman_maurya.png';
 import aishwarya_jadhav from '../assets/Team-2024-2025/photo/aishwarya_jadhav.png';
 import siddhi_naik from '../assets/Team-2024-2025/photo/siddhi_naik.png';

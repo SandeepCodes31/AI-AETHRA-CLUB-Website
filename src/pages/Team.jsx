@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter, Users, ChevronDown } from 'lucide-react';
+import { Github, Linkedin, Twitter, Users, ChevronDown, X } from 'lucide-react';
 import { SiLeetcode } from 'react-icons/si';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { teamData, getAvailableYears } from '../data/teamData';
@@ -20,6 +20,7 @@ const Team = () => {
   const [selectedYear, setSelectedYear] = useState(getYearFromUrl());
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [imageErrors, setImageErrors] = useState({});
+  const [lightboxImage, setLightboxImage] = useState(null);
   const dropdownRef = useRef(null);
 
   useEffect(() => {
@@ -42,11 +43,21 @@ const Team = () => {
         setIsDropdownOpen(false);
       }
     };
+    
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape' && lightboxImage) {
+        closeLightbox();
+      }
+    };
+    
     document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+    
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [lightboxImage]);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -99,6 +110,23 @@ const Team = () => {
     }));
   };
 
+  const openLightbox = (member) => {
+    // Only open lightbox if image is valid and not in error state
+    const hasImageError = imageErrors[member.id] || false;
+    const isValidImageSrc = member.image && 
+                           member.image !== '/broken-image.jpg' && 
+                           !member.image.includes('broken-image') &&
+                           member.image !== '';
+    
+    if (!hasImageError && isValidImageSrc) {
+      setLightboxImage(member);
+    }
+  };
+
+  const closeLightbox = () => {
+    setLightboxImage(null);
+  };
+
   const renderMemberCard = (member, index, delay = 0) => {
     const hasImageError = imageErrors[member.id] || false;
     
@@ -121,15 +149,16 @@ const Team = () => {
         <div className="w-24 h-24 bg-gradient-to-r from-green-400 to-blue-500 rounded-full mx-auto flex items-center justify-center overflow-hidden">          
           {!hasImageError && isValidImageSrc ? (
             <img
-              className="w-full h-full object-cover rounded-full"
+              className="w-full h-full object-cover rounded-full cursor-pointer transition-transform duration-300 hover:scale-110"
               src={member.image}
               alt={member.name}
+              title="Click for seeing more"
+              onClick={() => openLightbox(member)}
               onError={(e) => {
                 e.target.style.display = 'none';
                 handleImageError(member.id);
               }}
               onLoad={(e) => {
-                // Ensure the image is visible when it loads successfully
                 e.target.style.display = 'block';
               }}
             />
@@ -393,6 +422,113 @@ const Team = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Image Lightbox */}
+      {lightboxImage && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={closeLightbox}
+        >
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-md w-full mx-4 overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={closeLightbox}
+              className="absolute top-4 right-4 z-10 p-2 bg-black/20 hover:bg-black/40 rounded-full transition-colors"
+            >
+              <X className="w-5 h-5 text-white" />
+            </button>
+
+            {/* Image */}
+            <div className="aspect-square overflow-hidden">
+              <img
+                className="w-full h-full object-cover"
+                src={lightboxImage.image}
+                alt={lightboxImage.name}
+              />
+            </div>
+
+            {/* Member Info */}
+            <div className="p-6 text-center">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                {lightboxImage.name}
+              </h3>
+              <div className="flex justify-center mb-3">
+                <span className="inline-block bg-gradient-to-r from-green-500 to-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  {lightboxImage.role}
+                </span>
+              </div>
+              <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                {lightboxImage.bio}
+              </p>
+
+              {/* Social Links */}
+              <div className="flex justify-center space-x-3">
+                {lightboxImage.github && (
+                  <motion.a
+                    href={lightboxImage.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-600 dark:hover:bg-gray-500 rounded-full transition-colors"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <Github className="w-5 h-5 text-gray-600 dark:text-gray-300" />
+                  </motion.a>
+                )}
+                
+                {lightboxImage.linkedin && (
+                  <motion.a
+                    href={lightboxImage.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-blue-100 hover:bg-blue-200 dark:bg-blue-900 dark:hover:bg-blue-800 rounded-full transition-colors"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <Linkedin className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  </motion.a>
+                )}
+                
+                {lightboxImage.twitter && (
+                  <motion.a
+                    href={lightboxImage.twitter}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-sky-100 hover:bg-sky-200 dark:bg-sky-900 dark:hover:bg-sky-800 rounded-full transition-colors"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <Twitter className="w-5 h-5 text-sky-600 dark:text-sky-400" />
+                  </motion.a>
+                )}
+                
+                {lightboxImage.leetcode && (
+                  <motion.a
+                    href={lightboxImage.leetcode}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-orange-100 hover:bg-orange-200 dark:bg-orange-900 dark:hover:bg-orange-800 rounded-full transition-colors"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <SiLeetcode className="w-5 h-5 text-yellow-500 dark:text-yellow-400" />
+                  </motion.a>
+                )}
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </div>
   );
 };
