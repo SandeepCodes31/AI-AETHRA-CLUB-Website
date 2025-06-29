@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Users, Calendar, Code, Target, Eye, X, Bell, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import gfgHomeGif from '../assets/gfg_home.gif';
-import { recentEvents, pastEvents, homeTeamMembers, projectOfMonth, teamTestimonials2022_2023 } from '../data/homeData';
+import { recentEvents, pastEvents, homeTeamMembers, projectOfMonth, teamTestimonials2024_2025 } from '../data/homeData';
 import AnimatedTestimonials from '../components/AnimatedTestimonials';
 
 const Home = () => {
@@ -228,12 +228,12 @@ const Home = () => {
               Alumni Voices
             </h2>
             <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-              Hear from our 2022-2023 team members about their incredible journey with GFG-TCET
+              Hear from our 2024-2025 team members about their incredible journey with GFG-TCET
             </p>
           </motion.div>
 
           <AnimatedTestimonials 
-            testimonials={teamTestimonials2022_2023} 
+            testimonials={teamTestimonials2024_2025} 
             autoplay={true} 
           />
         </div>

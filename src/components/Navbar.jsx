@@ -63,10 +63,10 @@ const Navbar = () => {
             <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center">
               <img className="rounded-full" src={gfg_tcet_logo}></img>
             </div>
-            <span className="font-bold text-xl text-gray-900 dark:text-white">
-              GeeksforGeeks - TCET
-            </span>
-          </motion.div>         
+            <Link to="/" className="">
+              <span className="font-bold text-xl text-gray-900 dark:text-white">GeeksforGeeks - TCET</span>
+            </Link>
+          </motion.div>           
           <div className="hidden md:block">
             <div className="flex items-center space-x-8">
               {navItems.map((item) => (
