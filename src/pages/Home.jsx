@@ -3,26 +3,43 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Users, Calendar, Code, Target, Eye, X, Bell, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import gfgHomeGif from '../assets/gfg_home.gif';
-import { recentEvents, pastEvents, homeTeamMembers, projectOfMonth, visionMission } from '../data/homeData';
+import { recentEvents, pastEvents, homeTeamMembers, projectOfMonth, teamTestimonials2022_2023 } from '../data/homeData';
+import AnimatedTestimonials from '../components/AnimatedTestimonials';
 
 const Home = () => {
   const [showEventPopup, setShowEventPopup] = useState(false);
 
   useEffect(() => {
-    // Only show popup on page refresh/reload, not on React Router navigation
     const isRouterNavigation = sessionStorage.getItem('react-router-navigation') === 'true';
-    const hasSeenPopup = sessionStorage.getItem('home-popup-seen') === 'true';
+    const popupSeenData = localStorage.getItem('home-popup-seen');
+
+    let shouldShowPopup = false;
     
-    if (!isRouterNavigation && !hasSeenPopup) {
-      // This is a page refresh or direct access and user hasn't seen popup
+    if (!isRouterNavigation) {
+      if (!popupSeenData) {
+        shouldShowPopup = true;
+      } else {
+        try {
+          const { timestamp } = JSON.parse(popupSeenData);
+          const threeHoursInMs = 3 * 60 * 60 * 1000; 
+          const currentTime = Date.now();
+          
+          if (currentTime - timestamp > threeHoursInMs) {
+            shouldShowPopup = true;
+          }
+        } catch (error) {
+          shouldShowPopup = true;
+        }
+      }
+    }
+    
+    if (shouldShowPopup) {
       const timer = setTimeout(() => {
         setShowEventPopup(true);
       }, 1000);
       
       return () => clearTimeout(timer);
     }
-    
-    // Clear the navigation flag after page load to reset for next navigation
     if (isRouterNavigation) {
       setTimeout(() => {
         sessionStorage.removeItem('react-router-navigation');
@@ -32,8 +49,11 @@ const Home = () => {
 
   const closeEventPopup = () => {
     setShowEventPopup(false);
-    // Mark popup as seen to avoid showing it again during this session
-    sessionStorage.setItem('home-popup-seen', 'true');
+    const popupData = {
+      seen: true,
+      timestamp: Date.now()
+    };
+    localStorage.setItem('home-popup-seen', JSON.stringify(popupData));
   };  const fadeIn = {
     initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
@@ -102,7 +122,6 @@ const Home = () => {
                 </span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300 z-10 relative" />
                 
-                {/* Animated background effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
               </Link>
               
@@ -203,44 +222,20 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-8"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Vision & Mission
+              Alumni Voices
             </h2>
+            <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+              Hear from our 2022-2023 team members about their incredible journey with GFG-TCET
+            </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-lg rounded-3xl p-8"
-            >              <div className="flex items-center mb-6">
-                <Eye className="w-8 h-8 text-yellow-300 mr-4" />
-                <h3 className="text-2xl font-bold text-white">{visionMission.vision.title}</h3>
-              </div>
-              <p className="text-white/90 text-lg leading-relaxed">
-                {visionMission.vision.description}
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-lg rounded-3xl p-8"
-            >              <div className="flex items-center mb-6">
-                <Target className="w-8 h-8 text-yellow-300 mr-4" />
-                <h3 className="text-2xl font-bold text-white">{visionMission.mission.title}</h3>
-              </div>
-              <p className="text-white/90 text-lg leading-relaxed">
-                {visionMission.mission.description}
-              </p>
-            </motion.div>
-          </div>
+          <AnimatedTestimonials 
+            testimonials={teamTestimonials2022_2023} 
+            autoplay={true} 
+          />
         </div>
       </section>
 

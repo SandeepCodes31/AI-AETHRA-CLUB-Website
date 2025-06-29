@@ -124,7 +124,7 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-6">Contact Us</h1>
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-6 dark:from-green-300 dark:to-blue-300">Contact Us</h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">Have questions, suggestions, or want to collaborate? We'd love to hear from you!</p>
           </motion.div>
         </div>
@@ -246,12 +246,26 @@ const Contact = () => {
                   })}
                 </div>
               </div>
+
+              <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-700 rounded-xl shadow-md p-4 border border-green-100 dark:border-green-800">
+                <div className="flex items-start space-x-3">
+                  <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="text-white font-bold text-sm">PM</span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-sm font-bold text-gray-900 dark:text-white">Prince Maurya</h3>
+                    <p className="text-xs text-green-600 dark:text-green-400 font-medium mb-2">Web Head of GFG-TCET 2025</p>
+                    <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                      Website crafted with ❤️ in 2025. For any website issues, contact: princemaurya8879@gmail.com | +91 99877 42369
+                    </p>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Location Section */}
       <section className="py-20 bg-gradient-to-r from-green-500 to-blue-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div

@@ -25,8 +25,7 @@ const Team = () => {
     const urlYear = getYearFromUrl();
     const searchParams = new URLSearchParams(location.search);
     const yearParam = searchParams.get('year');
-    
-    // Only navigate if there's no year param or it's invalid, and avoid unnecessary updates
+  
     if (!yearParam || !years.includes(yearParam)) {
       const currentYear = years[0] || '2025-2026';
       navigate(`/team?year=${currentYear}`, { replace: true });
@@ -61,9 +60,9 @@ const Team = () => {
   const organizeTeamMembers = (members) => {
     if (!members || members.length === 0) return { core: [], extended: [], committee: [] };
     
-    const coreRoles = ['Chairperson', 'Vice Chairperson', 'Technical Head', 'Event Head', 'Marketing Head','Secretary'];
-    const extendedRoles = ['Vice-Technical Head', 'Vice-Event Head', 'PR & Outreach Head', 'Social Media Head', 'Design & Branding Head'];
-    const committeeRoles = ['Inhouse & Logistics', 'Technical Team', 'PR & Marketing Team', 'Creatives Team', 'Technical Team', 'PR & Marketing Team', 'Creatives Team'];
+    const coreRoles = ['Chairperson', 'Vice Chairperson', 'Technical Head', 'Event Head', 'Marketing Head','Secretary', 'Graphics Head'];
+    const extendedRoles = ['Vice-Technical Head', 'Vice-Event Head', 'PR & Outreach Head', 'PR Outreach Head', 'Social Media Head', 'Design & Branding Head', 'Logistics Head', 'Web Head'];
+    const committeeRoles = ['Inhouse & Logistics', 'Event Coordinator', 'Technical Team', 'PR & Marketing Team', 'Creatives Team', 'Technical Team', 'PR & Marketing Team', 'Creatives Team', 'Technical Member', 'Marketing Member', 'Graphics Member'];
     const core = members.filter(member => coreRoles.includes(member.role));
     const extended = members.filter(member => extendedRoles.includes(member.role));
     const committee = members.filter(member => committeeRoles.includes(member.role));

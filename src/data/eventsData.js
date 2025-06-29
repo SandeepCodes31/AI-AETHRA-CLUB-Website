@@ -1,4 +1,3 @@
-// Events page static data
 import clash_of_coders from '../assets/Team-2022-2023/events/clash_of_coders.png';
 export const upcomingEvents = [
   {
@@ -7,48 +6,12 @@ export const upcomingEvents = [
     date: '2025-01-15',
     time: '10:00 AM - 4:00 PM',
     location: 'Lab 301, TCET',
-    description: 'Learn the fundamentals of React.js and build your first web application',
+    description: 'Learn the fundamentals of React.js and build your first web application [This is not a actual event - Test Component]',
     participants: 50,
     category: 'Workshop',
     registrationLink: 'https://forms.google.com/react-workshop',
     image: '/api/placeholder/400/250'
   },
-  {
-    id: 2,
-    title: 'Algorithm Design Contest',
-    date: '2025-01-22',
-    time: '2:00 PM - 5:00 PM',
-    location: 'Computer Lab A',
-    description: 'Test your problem-solving skills in this competitive programming contest',
-    participants: 100,
-    category: 'Contest',
-    registrationLink: 'https://forms.google.com/algo-contest',
-    image: '/api/placeholder/400/250'
-  },
-  {
-    id: 3,
-    title: 'Industry Expert Talk: AI in Healthcare',
-    date: '2025-02-05',
-    time: '3:00 PM - 5:00 PM',
-    location: 'Auditorium',
-    description: 'Industry experts discuss the applications of AI in modern healthcare',
-    participants: 200,
-    category: 'Seminar',
-    registrationLink: 'https://forms.google.com/ai-healthcare',
-    image: '/api/placeholder/400/250'
-  },
-  {
-    id: 4,
-    title: 'Web Development Bootcamp',
-    date: '2025-02-12',
-    time: '9:00 AM - 6:00 PM',
-    location: 'Main Campus',
-    description: 'Intensive full-day bootcamp covering HTML, CSS, JavaScript, and modern frameworks',
-    participants: 75,
-    category: 'Bootcamp',
-    registrationLink: 'https://forms.google.com/web-bootcamp',
-    image: '/api/placeholder/400/250'
-  }
 ];
 
 export const pastEvents = [

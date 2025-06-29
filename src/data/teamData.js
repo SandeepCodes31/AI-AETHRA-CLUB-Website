@@ -1,4 +1,5 @@
 // Team Members Data 2022-2023 2023-2024 2024-2025 2025-2026
+// Team Members 2022-2023
 import Harsh_Jha from '../assets/Team-2022-2023/Harsh_Jha.jpg';
 import Khushi_Gupta from '../assets/Team-2022-2023/Khushi_Gupta.jpg';
 import Ankit_Maurya from '../assets/Team-2022-2023/ankit.jpg';
@@ -16,6 +17,25 @@ import prasad from '../assets/Team-2022-2023/prasad.jpg';
 import parth from '../assets/Team-2022-2023/parth.jpg';
 import yash from '../assets/Team-2022-2023/yash.jpg';
 import abhilash from '../assets/Team-2022-2023/abhilash.jpg';
+
+// Team Members 2024-2025
+import khushi_tiwari from '../assets/Team-2024-2025/photo/khushi_tiwari.png';
+import ayesha_singh from '../assets/Team-2024-2025/photo/ayesha_singh.png';
+import shivam_thakur from '../assets/Team-2024-2025/photo/shivam_thakur.jpeg';
+import aman_maurya from '../assets/Team-2024-2025/photo/aman_maurya.png';
+import aishwarya_jadhav from '../assets/Team-2024-2025/photo/aishwarya_jadhav.png';
+import siddhi_naik from '../assets/Team-2024-2025/photo/siddhi_naik.png';
+import shubham_gupta from '../assets/Team-2024-2025/photo/shubham_gupta.png';
+import harish_pandey from '../assets/Team-2024-2025/photo/harish_pandey.png';
+import sarthak_raut from '../assets/Team-2024-2025/photo/sarthak_raut.png';
+import tanisa_belel from '../assets/Team-2024-2025/photo/tanisa_belel.png';
+import devansh_tiwari from '../assets/Team-2024-2025/photo/devansh_tiwari.png';
+import hardik_bansal from '../assets/Team-2024-2025/photo/hardik_bansal.png';
+import vivek_gupta from '../assets/Team-2024-2025/photo/vivek_gupta.png';
+import gulam_shaikh from '../assets/Team-2024-2025/photo/gulam_shaikh.png';
+import sushant_jha from '../assets/Team-2024-2025/photo/sushant_jha.png';
+import adtiya_patil from '../assets/Team-2024-2025/photo/adtiya_patil.png';
+import karan_gupta from '../assets/Team-2024-2025/photo/karan_gupta.png';
 
 export const teamData = {
   '2025-2026': [
@@ -86,7 +106,161 @@ export const teamData = {
       twitter: 'https://twitter.com/meeraiyer'
     }
   ],
-  '2024-2025': [],
+  '2024-2025': [
+    {
+      id: 1,
+      name: 'Khushi Tiwari',
+      role: 'Chairperson',
+      image: khushi_tiwari,
+      bio: 'N.A.',
+      github: 'https://github.com',
+      linkedin: 'https://linkedin.com/',
+    },
+    {
+      id: 2,
+      name: 'Ayesha Singh',
+      role: 'Vice Chairperson',
+      image: ayesha_singh,
+      bio: 'N.A.',
+      github: 'https://github.com',
+      linkedin: 'https://linkedin.com/',
+    },
+    {
+      id: 3,
+      name: 'Shivam Thakur',
+      role: 'Event Head',
+      image: shivam_thakur,
+      bio: 'N.A.',
+      github: 'https://github.com',
+      linkedin: 'https://linkedin.com/',
+    },
+    {
+      id: 4,
+      name: 'Aman Maurya',
+      role: 'Technical Head',
+      image: aman_maurya,
+      bio: 'N.A.',
+      github: 'https://github.com',
+      linkedin: 'https://linkedin.com/',
+    },
+    {
+      id: 5,
+      name: 'Aishwarya Jadhav',
+      role: 'Marketing Head',
+      image: aishwarya_jadhav,
+      bio: 'N.A.',
+      github: 'https://github.com',
+      linkedin: 'https://linkedin.com/',
+    },
+    {
+      id: 6,
+      name: 'Siddhi Naik',
+      role: 'Graphics Head',
+      image: siddhi_naik,
+      bio: 'N.A.',
+      github: 'https://github.com',
+      linkedin: 'https://linkedin.com/',
+    },
+    {
+      id: 7,
+      name: 'Shubham Gupta',
+      role: 'Logistics Head',
+      image: shubham_gupta,
+      bio: 'N.A.',
+      github: 'https://github.com',
+      linkedin: 'https://linkedin.com/',
+    },
+    {
+      id: 8,
+      name: 'Harish Pandey',
+      role: 'Web Head',
+      image: harish_pandey,
+      bio: 'N.A.',
+      github: 'https://github.com',
+      linkedin: 'https://linkedin.com/',
+    },
+    {
+      id: 9,
+      name: 'Sarthak Raut',
+      role: 'PR Outreach Head',
+      image: sarthak_raut,
+      bio: 'N.A.',
+      github: 'https://github.com',
+      linkedin: 'https://linkedin.com/',
+    },
+    {
+      id: 10,
+      name: 'Tanisa Belel',
+      role: 'Social Media Head',
+      image: tanisa_belel,
+      bio: 'N.A.',
+      github: 'https://github.com',
+      linkedin: 'https://linkedin.com/',
+    },
+    {
+      id: 11,
+      name: 'Devansh Tiwari',
+      role: 'Event Coordinator',
+      image: devansh_tiwari,
+      bio: 'N.A.',
+      github: 'https://github.com',
+      linkedin: 'https://linkedin.com/',
+    },
+    {
+      id: 12,
+      name: 'Hardik Bansal',
+      role: 'Technical Member',
+      image: hardik_bansal,
+      bio: 'N.A.',
+      github: 'https://github.com',
+      linkedin: 'https://linkedin.com/',
+    },
+    {
+      id: 13,
+      name: 'Vivek Gupta',
+      role: 'Technical Member',
+      image: vivek_gupta,
+      bio: 'N.A.',
+      github: 'https://github.com',
+      linkedin: 'https://linkedin.com/',
+    },
+    {
+      id: 14,
+      name: 'Gulam Shaikh',
+      role: 'Marketing Member',
+      image: gulam_shaikh,
+      bio: 'N.A.',
+      github: 'https://github.com',
+      linkedin: 'https://linkedin.com/',
+    },
+    {
+      id: 15,
+      name: 'Sushant Jha',
+      role: 'Marketing Member',
+      image: sushant_jha,
+      bio: 'N.A.',
+      github: 'https://github.com',
+      linkedin: 'https://linkedin.com/',
+    },
+    {
+      id: 16,
+      name: 'Aditya Patil',
+      role: 'Graphics Member',
+      image: adtiya_patil,
+      bio: 'N.A.',
+      github: 'https://github.com',
+      linkedin: 'https://linkedin.com/',
+    },
+    {
+      id: 17,
+      name: 'Karan Gupta',
+      role: 'Graphics Member',
+      image: karan_gupta,
+      bio: 'N.A.',
+      github: 'https://github.com',
+      linkedin: 'https://linkedin.com/',
+    },
+  ],
   '2023-2024': [],
   '2022-2023': [    
     {
