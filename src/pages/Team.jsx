@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Twitter, Users, ChevronDown } from 'lucide-react';
+import { SiLeetcode } from 'react-icons/si';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { teamData, getAvailableYears } from '../data/teamData';
 import Swal from 'sweetalert2';
@@ -18,6 +19,11 @@ const Team = () => {
   
   const [selectedYear, setSelectedYear] = useState(getYearFromUrl());
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [imageErrors, setImageErrors] = useState({});
+
+  useEffect(() => {
+    console.log('imageErrors state updated:', imageErrors);
+  }, [imageErrors]);
   const dropdownRef = useRef(null);
 
   useEffect(() => {
@@ -90,7 +96,19 @@ const Team = () => {
 
   const currentTeamData = teamData[selectedYear] || [];
   const { core, extended, committee } = organizeTeamMembers(currentTeamData);
-  const hasTeamData = currentTeamData.length > 0;  const renderMemberCard = (member, index, delay = 0) => (
+  const hasTeamData = currentTeamData.length > 0;  const handleImageError = (memberId) => {
+    console.log('Image error for member:', memberId); // Debug log
+    setImageErrors(prev => ({
+      ...prev,
+      [memberId]: true
+    }));
+  };
+
+  const renderMemberCard = (member, index, delay = 0) => {
+    const hasImageError = imageErrors[member.id] || false;
+    console.log(`Member ${member.name} (ID: ${member.id}): hasImageError = ${hasImageError}`); // Debug log
+    
+    return (
     <motion.div
       key={member.id}
       initial={{ opacity: 0, y: 30 }}
@@ -101,16 +119,21 @@ const Team = () => {
     >
       <div className="relative mb-4 flex-shrink-0">        
         <div className="w-24 h-24 bg-gradient-to-r from-green-400 to-blue-500 rounded-full mx-auto flex items-center justify-center overflow-hidden">          
-          <img 
-            className="w-full h-full object-cover rounded-full" 
-            src={member.image} 
-            alt={member.name}
-            onError={(e) => {
-              e.target.style.display = 'none';
-              e.target.nextSibling.style.display = 'flex';
-            }}
-          />
-          <Users className="w-12 h-12 text-white" style={{ display: 'none' }} />
+          {!hasImageError ? (
+            <img
+              className="w-full h-full object-cover rounded-full"
+              src={member.image}
+              alt={member.name}
+              onError={(e) => {
+                console.log('Image onError triggered for:', member.name);
+                e.target.style.display = 'none';
+                handleImageError(member.id);
+              }}
+              onLoad={() => console.log('Image loaded successfully for:', member.name)}
+            />
+          ) : (
+            <Users className="w-12 h-12 text-white" />
+          )}
         </div>
        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-full flex justify-center">
           <span className="bg-gradient-to-r from-green-500 to-blue-500 text-white px-2 py-1 rounded-full text-xs font-semibold whitespace-nowrap min-w-max">
@@ -176,15 +199,25 @@ const Team = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <div className="w-4 h-4 bg-orange-600 dark:bg-orange-400 rounded"></div>
+            <SiLeetcode className="w-4 h-4 text-yellow-500 dark:text-yellow-400" />
           </motion.a>
         )}
       </div>
     </motion.div>
-  );
+    );
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+      {/* <div className="fixed top-20 right-4 z-50">
+        <button 
+          onClick={() => handleImageError(1)}
+          className="bg-red-500 text-white px-4 py-2 rounded shadow-lg"
+        >
+          Test Error ID 1
+        </button>
+      </div> */}
+      
       <div className="pt-16 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
