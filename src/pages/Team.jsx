@@ -4,7 +4,6 @@ import { Github, Linkedin, Twitter, Users, ChevronDown, X } from 'lucide-react';
 import { SiLeetcode } from 'react-icons/si';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { teamData, getAvailableYears } from '../data/teamData';
-import Swal from 'sweetalert2';
 
 const Team = () => {
   const years = getAvailableYears();
@@ -47,6 +46,7 @@ const Team = () => {
     const handleKeyDown = (event) => {
       if (event.key === 'Escape' && lightboxImage) {
         closeLightbox();
+        return;
       }
     };
     
@@ -111,7 +111,6 @@ const Team = () => {
   };
 
   const openLightbox = (member) => {
-    // Only open lightbox if image is valid and not in error state
     const hasImageError = imageErrors[member.id] || false;
     const isValidImageSrc = member.image && 
                            member.image !== '/broken-image.jpg' && 
@@ -129,8 +128,6 @@ const Team = () => {
 
   const renderMemberCard = (member, index, delay = 0) => {
     const hasImageError = imageErrors[member.id] || false;
-    
-    // Check if the image source is valid (not a broken path)
     const isValidImageSrc = member.image && 
                            member.image !== '/broken-image.jpg' && 
                            !member.image.includes('broken-image') &&

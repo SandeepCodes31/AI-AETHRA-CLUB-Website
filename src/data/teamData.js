@@ -150,7 +150,7 @@ export const teamData = {
       name: 'Nidhay Chavan',
       role: 'Social Media Head',
       image: nidhay_chavan,
-      bio: 'Skilled in content creation, digital branding, and community engagement',
+      bio: 'Skilled in content creation, digital branding, and community',
       github: 'https://github.com/',
       linkedin: 'https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://in.linkedin.com/in/nidhay-chavan-7191132bb&ved=2ahUKEwiZuoaylpeOAxV1c_UHHZPlODQQjjh6BAgxEAE&usg=AOvVaw23hMlWw2pzv9cyR8WmLFw0',
       leetcode: 'https://leetcode.com/',
