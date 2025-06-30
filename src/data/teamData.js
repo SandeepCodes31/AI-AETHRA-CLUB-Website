@@ -51,6 +51,11 @@ import ravishankar_kanaki from '../assets/Team-2025-2026/photo/ravishankar_kanak
 import rudra_umatiya from '../assets/Team-2025-2026/photo/rudra_umatiya.jpeg';
 import inayat_shaikh from '../assets/Team-2025-2026/photo/inayat_shaikh.png';
 import ayush_tiwari from '../assets/Team-2025-2026/photo/ayush_tiwari.jpg';
+import nidhay_chavan from '../assets/Team-2025-2026/photo/nidhay_chavan.jpg';
+import nikita_mishra from '../assets/Team-2025-2026/photo/nikita_mishra.jpg';
+import ajitesh_jain from '../assets/Team-2025-2026/photo/ajitesh_jain.jpg';
+import tanishka_jaiswal from '../assets/Team-2025-2026/photo/tanishka_jaiswal.jpg';
+import tavleen_kaur from '../assets/Team-2025-2026/photo/tavleen_kaur.jpeg';
 
 export const teamData = {
   '2025-2026': [
@@ -144,10 +149,10 @@ export const teamData = {
       id: 10,
       name: 'Nidhay Chavan',
       role: 'Social Media Head',
-      image: '/broken-image.jpg',
-      bio: 'N.A.',
+      image: nidhay_chavan,
+      bio: 'Skilled in content creation, digital branding, and community engagement',
       github: 'https://github.com/',
-      linkedin: 'https://www.linkedin.com/in/',
+      linkedin: 'https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://in.linkedin.com/in/nidhay-chavan-7191132bb&ved=2ahUKEwiZuoaylpeOAxV1c_UHHZPlODQQjjh6BAgxEAE&usg=AOvVaw23hMlWw2pzv9cyR8WmLFw0',
       leetcode: 'https://leetcode.com/',
     },
     {
@@ -181,17 +186,17 @@ export const teamData = {
       id: 14,
       name: 'Nikita Mishra',
       role: 'Technical Member',
-      image: '/broken-image.jpg',
-      bio: 'N.A.',
-      github: 'https://github.com/',
-      linkedin: 'https://www.linkedin.com/in/',
-      leetcode: 'https://leetcode.com/u/',
+      image: nikita_mishra,
+      bio: 'Motivated and detail-oriented developer',
+      github: 'https://github.com/Nikita13106',
+      linkedin: 'https://www.linkedin.com/in/nikita1310',
+      leetcode: 'https://leetcode.com/u/nikita1310/',
     },
     {
       id: 15,
       name: 'Ajitesh Jain',
       role: 'Technical Member',
-      image: '/broken-image.jpg',
+      image: ajitesh_jain,
       bio: 'N.A.',
       github: 'https://github.com/',
       linkedin: 'https://www.linkedin.com/in/',
@@ -211,11 +216,11 @@ export const teamData = {
       id: 17,
       name: 'Tanishka Jaiswal',
       role: 'Marketing Member',
-      image: '/broken-image.jpg',
-      bio: 'N.A.',
-      github: 'https://github.com/',
-      linkedin: 'https://www.linkedin.com/in/',
-      leetcode: 'https://leetcode.com/u/',
+      image: tanishka_jaiswal,
+      bio: 'Cyber Security',
+      github: 'https://github.com/Tanishka7813',
+      linkedin: 'https://www.linkedin.com/in/tanishka-jaiswal-4034b6352',
+      leetcode: 'https://leetcode.com/Tanishka_Jaiswal/',
     },
     {
       id: 18,
@@ -231,11 +236,11 @@ export const teamData = {
       id: 19,
       name: 'Tavleen Kaur',
       role: 'Graphics Member',
-      image: '/broken-image.jpg',
-      bio: 'N.A.',
-      github: 'https://github.com/',
-      linkedin: 'https://www.linkedin.com/in/',
-      leetcode: 'https://leetcode.com/u/',
+      image: tavleen_kaur,
+      bio: 'Contributing to the design and creation of visual content ',
+      github: 'https://github.com/TavleenKaurDadial',
+      linkedin: 'https://www.linkedin.com/in/tavleen-kaur-dadial/',
+      leetcode: 'https://leetcode.com/u/Tavleen10r/',
     },
     {
       id: 20,
