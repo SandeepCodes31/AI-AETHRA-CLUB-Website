@@ -79,10 +79,10 @@ const useSecurity = () => {
       }
     };
 
-    const handleSelectStart = (e) => {
-      e.preventDefault();
-      return false;
-    };
+    // const handleSelectStart = (e) => {
+    //   e.preventDefault();
+    //   return false;
+    // };
 
     const handleDragStart = (e) => {
       e.preventDefault();
@@ -101,7 +101,7 @@ const useSecurity = () => {
 
     document.addEventListener('contextmenu', handleContextMenu);
     document.addEventListener('keydown', handleKeyDown);
-    document.addEventListener('selectstart', handleSelectStart);
+    // document.addEventListener('selectstart', handleSelectStart);
     document.addEventListener('dragstart', handleDragStart);
 
     let devtools = false;
@@ -136,7 +136,7 @@ const useSecurity = () => {
     return () => {
       document.removeEventListener('contextmenu', handleContextMenu);
       document.removeEventListener('keydown', handleKeyDown);
-      document.removeEventListener('selectstart', handleSelectStart);
+      // document.removeEventListener('selectstart', handleSelectStart);
       document.removeEventListener('dragstart', handleDragStart);
       clearInterval(devToolsInterval);
 
