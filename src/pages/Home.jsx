@@ -275,11 +275,10 @@ const Home = () => {
 
             <div className="p-6">
               <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">
-                🎉 Exciting Events Coming Up!
+                🎉 GFG - CodeFlex
               </h4>
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                Don't miss out on our latest coding competitions, workshops, and tech talks. 
-                Join fellow geeks and level up your skills!... This is the Test Pop Up currently there is not Events Hosted
+                🌟 CodeFlex is our Monthly Project Submission Contest, open to all SE and TE developers and innovators from TCET. Whether it's a beginner-level project or an advanced build, your effort matters!
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3">

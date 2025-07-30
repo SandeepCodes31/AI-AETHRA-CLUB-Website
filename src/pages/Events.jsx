@@ -7,6 +7,8 @@ import Swal from 'sweetalert2';
 const Events = () => {
   const [activeTab, setActiveTab] = useState('upcoming');
   const [showEventModal, setShowEventModal] = useState(false);
+  const [showImageModal, setShowImageModal] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
   const [eventFormData, setEventFormData] = useState({
     name: '',
     email: '',
@@ -25,6 +27,11 @@ const Events = () => {
       ...eventFormData,
       [e.target.name]: e.target.value
     });
+  };
+
+  const handleImageClick = (image, title) => {
+    setSelectedImage({ src: image, title });
+    setShowImageModal(true);
   };
 
   const handleEventSubmit = async (e) => {
@@ -145,8 +152,19 @@ const Events = () => {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full"
                   >
-                    <div className="h-48 bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center">
-                      <Calendar className="w-16 h-16 text-white" />
+                    <div className="h-48 flex items-center justify-center overflow-hidden">
+                      {event.image ? (
+                        <img 
+                          src={event.image} 
+                          alt={event.title}
+                          className="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
+                          onClick={() => handleImageClick(event.image, event.title)}
+                        />
+                      ) : (
+                        <div className="h-48 bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center">
+                          <Calendar className="w-16 h-16 text-white" />
+                        </div>
+                      )}
                     </div>
 
                     <div className="p-6 flex flex-col flex-grow">
@@ -156,17 +174,24 @@ const Events = () => {
                         </span>
                         <div className="flex items-center text-gray-500 dark:text-gray-400 text-sm">
                           <Users className="w-4 h-4 mr-1" />
-                          {event.participants} spots
+                          {event.participants}+ spots
                         </div>
                       </div>
                       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                        {event.title}
+                        <div className="flex items-center space-x-2">{event.title} &nbsp;
+                           <div className="relative flex items-center">
+                             <span className="bg-red-600 text-white px-2 py-1 rounded text-xs font-bold uppercase tracking-wider animate-pulse">
+                               LIVE
+                             </span>
+                             <div className="absolute -right-1 w-2 h-2 bg-red-500 rounded-full animate-ping"></div>
+                           </div>
+                         </div>
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed flex-grow">{event.description}</p>
                       <div className="space-y-2 mb-6">
                         <div className="flex items-center text-gray-600 dark:text-gray-400">
                           <Calendar className="w-4 h-4 mr-2" />
-                          <span className="text-sm">{new Date(event.date).toLocaleDateString()}</span>
+                          <span className="text-sm">{event.date}</span>
                         </div>
                         <div className="flex items-center text-gray-600 dark:text-gray-400">
                           <Clock className="w-4 h-4 mr-2" />
@@ -176,8 +201,12 @@ const Events = () => {
                           <MapPin className="w-4 h-4 mr-2" />
                           <span className="text-sm">{event.location}</span>
                         </div>
+                        <div className="flex items-center text-gray-600 dark:text-gray-400">
+                          <Users className="w-4 h-4 mr-2" />
+                          <span className="text-sm">{event.spots}</span>
+                        </div>
                       </div>
-                      <motion.a
+                      {/* <motion.a
                         href={event.registrationLink}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -187,6 +216,35 @@ const Events = () => {
                       >
                         <span>Register Now</span>
                         <ExternalLink className="w-4 h-4" />
+                      </motion.a> */}
+
+                       <motion.a
+                        href={event.registrationLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`w-full py-3 px-4 rounded-lg font-semibold text-center inline-flex items-center justify-center space-x-2 transition-all duration-300 mt-auto ${
+                          event.status === 'live' 
+                            ? 'bg-gradient-to-r from-green-500 to-blue-500 text-white hover:from-green-600 hover:to-blue-600 animate-pulse' 
+                            : event.status === 'closed'
+                            ? 'bg-gray-400 text-gray-200 cursor-not-allowed'
+                            : 'bg-gradient-to-r from-green-500 to-blue-500 text-white hover:from-green-600 hover:to-blue-600'
+                        }`}
+                        whileHover={{ scale: event.status === 'closed' ? 1 : 1.02 }}
+                        whileTap={{ scale: event.status === 'closed' ? 1 : 0.98 }}
+                        onClick={event.status === 'closed' ? (e) => e.preventDefault() : undefined}
+                      >
+                        <span>
+                          {event.status === 'live' 
+                            ? 'Registration Live!' 
+                            : event.status === 'closed' 
+                            ? 'Registration Closed' 
+                            : 'Register Now'
+                          }
+                        </span>
+                        {event.status !== 'closed' && <ExternalLink className="w-4 h-4" />}
+                        {event.status === 'live' && (
+                          <div className="w-2 h-2 bg-white rounded-full animate-ping"></div>
+                        )}
                       </motion.a>
                     </div>
                   </motion.div>
@@ -215,7 +273,8 @@ const Events = () => {
                           <img 
                             src={event.images} 
                             alt={event.title}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
+                            onClick={() => handleImageClick(event.images, event.title)}
                           />
                         </div>
                       </div>
@@ -234,7 +293,8 @@ const Events = () => {
                         <div className="flex items-center space-x-6 text-gray-600 dark:text-gray-400 text-sm">
                           <div className="flex items-center">
                             <Calendar className="w-4 h-4 mr-2" />
-                            <span>{new Date(event.date).toLocaleDateString()}</span>
+                            {/* <span>{new Date(event.date).toLocaleDateString()}</span> */}
+                            <span>{event.date}</span>
                           </div>
                           <div className="flex items-center">
                             <MapPin className="w-4 h-4 mr-2" />
@@ -389,6 +449,36 @@ const Events = () => {
                 </motion.button>
               </div>
             </form>
+          </motion.div>
+        </div>
+      )}
+
+      {/* Image Modal */}
+      {showImageModal && selectedImage && (
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4" onClick={() => setShowImageModal(false)}>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            className="relative max-w-4xl max-h-[90vh] w-full h-full flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setShowImageModal(false)}
+              className="absolute top-4 right-4 z-10 p-2 bg-black bg-opacity-50 hover:bg-opacity-70 rounded-full text-white transition-all duration-200"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <img 
+              src={selectedImage.src} 
+              alt={selectedImage.title}
+              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+            />
+            <div className="absolute bottom-4 left-4 right-4 text-center">
+              <h3 className="text-white text-xl font-bold bg-black bg-opacity-50 px-4 py-2 rounded-lg">
+                {selectedImage.title}
+              </h3>
+            </div>
           </motion.div>
         </div>
       )}

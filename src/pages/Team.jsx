@@ -4,6 +4,7 @@ import { Github, Linkedin, Twitter, Users, ChevronDown, X } from 'lucide-react';
 import { SiLeetcode } from 'react-icons/si';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { teamData, getAvailableYears } from '../data/teamData';
+import Swal from 'sweetalert2';
 
 const Team = () => {
   const years = getAvailableYears();

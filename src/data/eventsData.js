@@ -1,16 +1,20 @@
 import clash_of_coders from '../assets/Team-2022-2023/events/clash_of_coders.png';
+import codeflex from '../assets/Team-2025-2026/event/codeflex.jpg';
+
 export const upcomingEvents = [
   {
     id: 1,
-    title: 'React.js Workshop',
-    date: '2025-01-15',
-    time: '10:00 AM - 4:00 PM',
-    location: 'Lab 301, TCET',
-    description: 'Learn the fundamentals of React.js and build your first web application [This is not a actual event - Test Component]',
-    participants: 50,
-    category: 'Workshop',
-    registrationLink: 'https://forms.google.com/react-workshop',
-    image: '/api/placeholder/400/250'
+    title: 'GFG CodeFlex',
+    date: '01-08-2025 to 21-08-2025',
+    time: '9:00 AM',
+    location: 'Online',
+    description: 'Build an innovative project and showcase your technical creativity! GFG CodeFlex is a monthly coding initiative where students can submit their unique projects to compete. Projects are judged based on creativity, execution, technical depth, and presentation. Winners will be featured on GFG socials and can earn certificates and recognition!',
+    participants: 500,
+    category: 'Competition',
+    spots: 'Individual Participation',
+    registrationLink: 'https://forms.gle/6EPterrEZQ9zuVVG6',
+    image: codeflex,
+    status: 'live'
   },
 ];
 
