@@ -278,7 +278,9 @@ const Home = () => {
                 🎉 GFG - CodeFlex
               </h4>
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                🌟 CodeFlex is our Monthly Project Submission Contest, open to all SE and TE developers and innovators from TCET. Whether it's a beginner-level project or an advanced build, your effort matters!
+                🌟 CodeFlex is our Monthly Project Submission Contest, open to all SE and TE developers and innovators from TCET. 
+  Whether it's a beginner-level project or an advanced build, your effort matters! 🚀<br /><br />
+  🔒 The event is now closed. ✅ Go and check out the results!
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3">
@@ -290,7 +292,7 @@ const Home = () => {
                   }}
                   className="flex-1 bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-3 rounded-lg font-medium hover:from-green-600 hover:to-green-700 transition-all duration-300 flex items-center justify-center space-x-2 group"
                 >
-                  <span>View Events</span>
+                  <span>View Result</span>
                   <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <button

@@ -14,7 +14,7 @@ export const upcomingEvents = [
     spots: 'Individual Participation',
     registrationLink: 'https://forms.gle/6EPterrEZQ9zuVVG6',
     image: codeflex,
-    status: 'live'
+    status: 'closed'
   },
 ];
 

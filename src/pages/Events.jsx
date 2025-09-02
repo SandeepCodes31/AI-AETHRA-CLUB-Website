@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, Users, ExternalLink, Clock, Tag, X, Send } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Calendar, MapPin, Users, ExternalLink, Clock, Tag, X, Send, Eye } from 'lucide-react';
 import { upcomingEvents, pastEvents, getCategoryColor } from '../data/eventsData';
+import { getEventResults, hasResults } from '../data/resultsData';
 import Swal from 'sweetalert2';
 
 const Events = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('upcoming');
   const [showEventModal, setShowEventModal] = useState(false);
   const [showImageModal, setShowImageModal] = useState(false);
@@ -32,6 +35,10 @@ const Events = () => {
   const handleImageClick = (image, title) => {
     setSelectedImage({ src: image, title });
     setShowImageModal(true);
+  };
+
+  const handleResultsClick = (eventId) => {
+    navigate(`/results/${eventId}`);
   };
 
   const handleEventSubmit = async (e) => {
@@ -178,14 +185,17 @@ const Events = () => {
                         </div>
                       </div>
                       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                        <div className="flex items-center space-x-2">{event.title} &nbsp;
-                           <div className="relative flex items-center">
-                             <span className="bg-red-600 text-white px-2 py-1 rounded text-xs font-bold uppercase tracking-wider animate-pulse">
-                               LIVE
-                             </span>
-                             <div className="absolute -right-1 w-2 h-2 bg-red-500 rounded-full animate-ping"></div>
-                           </div>
-                         </div>
+                        <div className="flex items-center space-x-2">
+                          <span>{event.title}</span>
+                          {event.status && event.status.toLowerCase() === 'live' && (
+                            <div className="relative flex items-center">
+                              <span className="bg-red-600 text-white px-2 py-1 rounded text-xs font-bold uppercase tracking-wider animate-pulse">
+                                LIVE
+                              </span>
+                              <div className="absolute -right-1 w-2 h-2 bg-red-500 rounded-full animate-ping"></div>
+                            </div>
+                          )}
+                        </div>
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed flex-grow">{event.description}</p>
                       <div className="space-y-2 mb-6">
@@ -218,34 +228,46 @@ const Events = () => {
                         <ExternalLink className="w-4 h-4" />
                       </motion.a> */}
 
-                       <motion.a
-                        href={event.registrationLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`w-full py-3 px-4 rounded-lg font-semibold text-center inline-flex items-center justify-center space-x-2 transition-all duration-300 mt-auto ${
-                          event.status === 'live' 
-                            ? 'bg-gradient-to-r from-green-500 to-blue-500 text-white hover:from-green-600 hover:to-blue-600 animate-pulse' 
-                            : event.status === 'closed'
-                            ? 'bg-gray-400 text-gray-200 cursor-not-allowed'
-                            : 'bg-gradient-to-r from-green-500 to-blue-500 text-white hover:from-green-600 hover:to-blue-600'
-                        }`}
-                        whileHover={{ scale: event.status === 'closed' ? 1 : 1.02 }}
-                        whileTap={{ scale: event.status === 'closed' ? 1 : 0.98 }}
-                        onClick={event.status === 'closed' ? (e) => e.preventDefault() : undefined}
-                      >
-                        <span>
-                          {event.status === 'live' 
-                            ? 'Registration Live!' 
-                            : event.status === 'closed' 
-                            ? 'Registration Closed' 
-                            : 'Register Now'
-                          }
-                        </span>
-                        {event.status !== 'closed' && <ExternalLink className="w-4 h-4" />}
-                        {event.status === 'live' && (
-                          <div className="w-2 h-2 bg-white rounded-full animate-ping"></div>
-                        )}
-                      </motion.a>
+                       {event.status === 'closed' && hasResults(event.id) ? (
+                        <motion.button
+                          onClick={() => handleResultsClick(event.id)}
+                          className="w-full py-3 px-4 rounded-lg font-semibold text-center inline-flex items-center justify-center space-x-2 transition-all duration-300 mt-auto bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600"
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                        >
+                          <span>View Results</span>
+                          <Eye className="w-4 h-4" />
+                        </motion.button>
+                      ) : (
+                        <motion.a
+                          href={event.registrationLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`w-full py-3 px-4 rounded-lg font-semibold text-center inline-flex items-center justify-center space-x-2 transition-all duration-300 mt-auto ${
+                            event.status === 'live' 
+                              ? 'bg-gradient-to-r from-green-500 to-blue-500 text-white hover:from-green-600 hover:to-blue-600 animate-pulse' 
+                              : event.status === 'closed'
+                              ? 'bg-gray-400 text-gray-200 cursor-not-allowed'
+                              : 'bg-gradient-to-r from-green-500 to-blue-500 text-white hover:from-green-600 hover:to-blue-600'
+                          }`}
+                          whileHover={{ scale: event.status === 'closed' ? 1 : 1.02 }}
+                          whileTap={{ scale: event.status === 'closed' ? 1 : 0.98 }}
+                          onClick={event.status === 'closed' ? (e) => e.preventDefault() : undefined}
+                        >
+                          <span>
+                            {event.status === 'live' 
+                              ? 'Registration Live!' 
+                              : event.status === 'closed' 
+                              ? 'Registration Closed' 
+                              : 'Register Now'
+                            }
+                          </span>
+                          {event.status !== 'closed' && <ExternalLink className="w-4 h-4" />}
+                          {event.status === 'live' && (
+                            <div className="w-2 h-2 bg-white rounded-full animate-ping"></div>
+                          )}
+                        </motion.a>
+                      )}
                     </div>
                   </motion.div>
                 ))}

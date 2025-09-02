@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Team from './pages/Team';
 import Events from './pages/Events';
+import Results from './pages/Results';
 import Contact from './pages/Contact';
 import useSecurity from './hooks/useSecurity';
 import './App.css';
@@ -20,6 +21,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/team" element={<Team />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/results/:eventId" element={<Results />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
