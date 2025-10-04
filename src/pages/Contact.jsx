@@ -85,25 +85,25 @@ const Contact = () => {
     {
       icon: Github,
       name: 'GitHub',
-      url: 'https://github.com/gfg-tcet',
+      url: '#',
       color: 'hover:bg-gray-900'
     },
     {
       icon: Instagram,
       name: 'Instagram',
-      url: 'https://www.instagram.com/gfg_tcet/',
+      url: 'https://www.instagram.com/ai.aethra.club?igsh=dHcyNXh0aGtoNXZy',
       color: 'hover:bg-pink-600'
     },
     {
       icon: Linkedin,
       name: 'LinkedIn',
-      url: 'https://www.linkedin.com/company/gfg-tcet/',
+      url: '#',
       color: 'hover:bg-blue-600'
     },
     {
       icon: Twitter,
       name: 'Twitter',
-      url: 'https://x.com/GFG_TCET',
+      url: '#',
       color: 'hover:bg-blue-400'
     }
   ];
@@ -116,7 +116,7 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
-      <section className="pt-24 pb-16 bg-gradient-to-r from-green-500/10 to-blue-500/10">
+      <section className="pt-24 pb-16 bg-gradient-to-r from-sky-200/10 to-blue-500/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -124,7 +124,7 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-6 dark:from-green-300 dark:to-blue-300">Contact Us</h1>
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-sky-600 to-blue-700 bg-clip-text text-transparent mb-6 dark:from-sky-300 dark:to-blue-400">Contact Us</h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">Have questions, suggestions, or want to collaborate? We'd love to hear from you!</p>
           </motion.div>
         </div>
@@ -139,26 +139,26 @@ const Contact = () => {
               transition={{ duration: 0.6 }}
               className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8"
             >
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Send us a Message</h2>
-              
+              <h2 className="text-3xl font-bold text-sky-900 dark:text-sky-300 mb-6">Send us a Message</h2>
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Your Name</label>
-                  <input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} required className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors" placeholder="Enter your full name"/>
+                  <label htmlFor="name" className="block text-sm font-medium text-sky-900 dark:text-sky-300 mb-2">Your Name</label>
+                  <input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} required className="w-full px-4 py-3 border border-sky-300 dark:border-sky-600 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors" placeholder="Enter your full name"/>
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email Address</label>
-                  <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} required className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors" placeholder="Enter your email address"/>
+                  <label htmlFor="email" className="block text-sm font-medium text-sky-900 dark:text-sky-300 mb-2">Email Address</label>
+                  <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} required className="w-full px-4 py-3 border border-sky-300 dark:border-sky-600 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors" placeholder="Enter your email address"/>
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
-                  <textarea id="message" name="message" value={formData.message} onChange={handleInputChange} required rows={6} className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors resize-none" placeholder="Tell us about your query, suggestion, or collaboration idea..."/>
+                  <label htmlFor="message" className="block text-sm font-medium text-sky-900 dark:text-sky-300 mb-2">Message</label>
+                  <textarea id="message" name="message" value={formData.message} onChange={handleInputChange} required rows={6} className="w-full px-4 py-3 border border-sky-300 dark:border-sky-600 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors resize-none" placeholder="Tell us about your query, suggestion, or collaboration idea..."/>
                 </div>
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full bg-gradient-to-r from-green-500 to-blue-500 text-white py-3 px-6 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center space-x-2 ${
-                    isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:from-green-600 hover:to-blue-600 transform hover:scale-[1.02]'
+                  className={`w-full bg-gradient-to-r from-sky-500 to-blue-700 text-white py-3 px-6 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center space-x-2 ${
+                    isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:from-sky-600 hover:to-blue-800 transform hover:scale-[1.02]'
                   }`}
                   whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                   whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
@@ -184,8 +184,8 @@ const Contact = () => {
               className="space-y-8"
             >
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Get in Touch</h2>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed"> Whether you're a student looking to join our community, a fellow developer  wanting to collaborate, or an organization interested in partnerships,  we're here to connect and create amazing things together.</p>
+                <h2 className="text-3xl font-bold text-sky-900 dark:text-sky-300 mb-6">Get in Touch</h2>
+                <p className="text-sky-700 dark:text-sky-400 leading-relaxed"> Whether you're a student looking to join our community, a fellow developer  wanting to collaborate, or an organization interested in partnerships,  we're here to connect and create amazing things together.</p>
               </div>
 
               <div className="space-y-4">
@@ -200,17 +200,17 @@ const Contact = () => {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                      className="flex items-center space-x-4 p-4 bg-gradient-to-r from-green-50 to-blue-50 dark:from-gray-700 dark:to-gray-800 rounded-xl hover:shadow-lg transition-all duration-300"
+                      className="flex items-center space-x-4 p-4 bg-gradient-to-r from-sky-100 to-blue-100 dark:from-gray-700 dark:to-gray-800 rounded-xl hover:shadow-lg transition-all duration-300"
                       whileHover={{ scale: 1.02 }}
                     >
-                      <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center">
+                      <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-sky-500 to-blue-700 rounded-full flex items-center justify-center">
                         <IconComponent className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900 dark:text-white">
+                        <h3 className="font-semibold text-sky-900 dark:text-sky-300">
                           {info.title}
                         </h3>
-                        <p className="text-gray-600 dark:text-gray-400 text-sm">
+                        <p className="text-sky-700 dark:text-sky-400 text-sm">
                           {info.detail}
                         </p>
                       </div>
@@ -220,9 +220,9 @@ const Contact = () => {
               </div>
 
               <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Follow Us</h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-6 text-sm">Stay updated with our latest events, projects, and community highlights</p>
-                
+                <h3 className="text-xl font-bold text-sky-900 dark:text-sky-300 mb-4">Follow Us</h3>
+                <p className="text-sky-700 dark:text-sky-400 mb-6 text-sm">Stay updated with our latest events, projects, and community highlights</p>
+
                 <div className="grid grid-cols-2 gap-4">
                   {socialLinks.map((social, index) => {
                     const IconComponent = social.icon;
@@ -235,7 +235,7 @@ const Contact = () => {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-                        className={`flex items-center space-x-3 p-3 bg-gray-100 dark:bg-gray-700 rounded-lg transition-all duration-300 ${social.color} hover:text-white group`}
+                        className={`flex items-center space-x-3 p-3 bg-sky-100 dark:bg-sky-700 rounded-lg transition-all duration-300 ${social.color} hover:text-white group`}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
@@ -247,16 +247,31 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-700 rounded-xl shadow-md p-4 border border-green-100 dark:border-green-800">
+              <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-700 rounded-xl shadow-md p-4 border border-sky-200 dark:border-sky-800">
                 <div className="flex items-start space-x-3">
-                  <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-gradient-to-r from-sky-500 to-blue-700 rounded-full flex items-center justify-center flex-shrink-0">
                     <span className="text-white font-bold text-sm">PM</span>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-sm font-bold text-gray-900 dark:text-white">Prince Maurya</h3>
-                    <p className="text-xs text-green-600 dark:text-green-400 font-medium mb-2">Web Head of GFG-TCET 2025</p>
-                    <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                    <h3 className="text-sm font-bold text-sky-900 dark:text-sky-300">Prince Maurya</h3>
+                    <p className="text-xs text-sky-600 dark:text-sky-400 font-medium mb-2">Secretary of AI AETHRA-TCET 2025</p>
+                    <p className="text-xs text-sky-700 dark:text-sky-400 leading-relaxed">
                       Website crafted with ❤️ in 2025. For any website issues, contact: princemaurya8879@gmail.com | +91 99877 42369
+                    </p>
+                  </div>
+                </div>
+              </div>
+             
+              <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-700 rounded-xl shadow-md p-4 border border-sky-200 dark:border-sky-800 mt-4">
+                <div className="flex items-start space-x-3">
+                  <div className="w-10 h-10 bg-gradient-to-r from-sky-500 to-blue-700 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="text-white font-bold text-sm">SP</span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-sm font-bold text-sky-900 dark:text-sky-300">Sandeep Pal</h3>
+                    <p className="text-xs text-sky-600 dark:text-sky-400 font-medium mb-2">Technical Member of AI AETHRA-TCET</p>
+                    <p className="text-xs text-sky-700 dark:text-sky-400 leading-relaxed">
+                     Website crafted with ❤️ in 2025 | Contributing to the technical excellence of AI AETHRA-TCET.
                     </p>
                   </div>
                 </div>
@@ -266,7 +281,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-r from-green-500 to-blue-600">
+      <section className="py-20 bg-gradient-to-r from-sky-500 to-blue-400">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -296,7 +311,7 @@ const Contact = () => {
                 href="https://maps.google.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block mt-6 bg-white text-green-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
+                className="inline-block mt-6 bg-white text-sky-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

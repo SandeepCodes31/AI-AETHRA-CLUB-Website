@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Users, Calendar, Code, Target, Eye, X, Bell, ExternalLink } from 'lucide-react';
+import { ArrowRight, Users, Calendar, Code, Target, Eye, X, Bell, ExternalLink, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import gfgHomeGif from '../assets/gfg_home.gif';
-import { recentEvents, pastEvents, homeTeamMembers, projectOfMonth, teamTestimonials2024_2025 } from '../data/homeData';
+import { recentEvents, pastEvents, homeTeamMembers, projectOfMonth, teamTestimonials2025_2026 } from '../data/homeData';
+import { getCategoryColor } from '../data/eventsData';
 import AnimatedTestimonials from '../components/AnimatedTestimonials';
 
 const Home = () => {
@@ -77,7 +78,7 @@ const Home = () => {
             alt="GFG Background" 
             className="w-full h-full object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-blue-500/10"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-sky-500/10 to-blue-700/10"></div>
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -89,9 +90,9 @@ const Home = () => {
           >
             <motion.h1
               variants={fadeIn}
-              className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent dark:from-green-300 dark:to-blue-300"
+            className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-sky-600 to-blue-700 bg-clip-text text-transparent dark:from-sky-300 dark:to-blue-400"
             >
-              Welcome to GFG-TCET Chapter
+              Welcome to AI AETHRA CLUB
             </motion.h1>
             
             <motion.h2
@@ -115,7 +116,7 @@ const Home = () => {
             >
               <Link
                 to="/events"
-                className="group bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl transform hover:scale-105 relative overflow-hidden"
+              className="group bg-gradient-to-r from-sky-500 to-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-sky-600 hover:to-blue-800 transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl transform hover:scale-105 relative overflow-hidden"
               >
                 <span className="relative z-10 group-hover:animate-pulse transition-all duration-300 transform group-hover:translate-x-1">
                   Join Our Events
@@ -127,7 +128,7 @@ const Home = () => {
               
               <Link
                 to="/about"
-                className="border-2 border-green-500 text-green-600 dark:text-white-400 px-8 py-4 rounded-full font-semibold text-lg hover:bg-green-500 hover:text-white transition-all duration-300"
+              className="border-2 border-sky-400 text-sky-600 dark:text-white-400 px-8 py-4 rounded-full font-semibold text-lg hover:bg-sky-400 hover:text-white transition-all duration-300"
               >
                 Learn More
               </Link>
@@ -137,7 +138,7 @@ const Home = () => {
       </section>
 
   
-      <section className="py-20 bg-gradient-to-r from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
+      <section className="py-20 bg-gradient-to-r from-sky-100 to-blue-100 dark:from-gray-900 dark:to-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -165,13 +166,13 @@ const Home = () => {
                 className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <div className="flex items-center mb-4">
-                  <Calendar className="w-6 h-6 text-green-500 mr-3" />
+                  <Calendar className="w-6 h-6 text-sky-400 mr-3" />
                   <span className="text-sm text-gray-500 dark:text-gray-400">{event.date}</span>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                   {event.title}
                 </h3>
-                <span className="inline-block bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">
+                  <span className="inline-block bg-sky-100 dark:bg-yellow-900 text-sky-800 dark:text-yellow-200 px-3 py-1 rounded-full text-sm font-medium">
                   {event.type}
                 </span>
               </motion.div>
@@ -188,7 +189,7 @@ const Home = () => {
             <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
               Past Events
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
               {pastEvents.map((event, index) => (
                 <motion.div
                   key={index}
@@ -196,15 +197,18 @@ const Home = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg"
+                  className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   <div className="flex items-center mb-4">
-                    <Calendar className="w-6 h-6 text-blue-500 mr-3" />
+                    <Calendar className="w-6 h-6 text-sky-400 mr-3" />
                     <span className="text-sm text-gray-500 dark:text-gray-400">{event.date}</span>
                   </div>
-                  <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                     {event.title}
-                  </h4>
+                  </h3>
+                  <span className={`inline-block ${getCategoryColor(event.type)} px-3 py-1 rounded-full text-sm font-medium`}>
+                    {event.type}
+                  </span>
                   <p className="text-gray-600 dark:text-gray-400 text-sm">
                     {event.summary}
                   </p>
@@ -215,29 +219,44 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-r from-green-500 to-blue-600">
+      {/* <section className="py-20 bg-white dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-8"
+            className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Alumni Voices
-            </h2>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-              Hear from our 2024-2025 team members about their incredible journey with GFG-TCET
-            </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Our Team</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Hear from our team members about their journey and experiences</p>
           </motion.div>
-
-          <AnimatedTestimonials 
-            testimonials={teamTestimonials2024_2025} 
-            autoplay={true} 
-          />
+          <AnimatedTestimonials testimonials={teamTestimonials2025_2026} />
         </div>
-      </section>
+      </section> */}
+
+      {/* Footer section */}
+      <footer className="bg-gray-900 text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
+            <Link to="/" className="hover:underline">
+              Home
+            </Link>
+            <Link to="/about" className="hover:underline">
+              About Us
+            </Link>
+            <Link to="/contact" className="hover:underline">
+              Contact
+            </Link>
+            <a href="https://www.instagram.com/ai.aethra.club?igsh=dHcyNXh0aGtoNXZy" aria-label="Instagram" className="hover:text-pink-500">
+              <Instagram className="w-6 h-6" />
+            </a>
+          </div>
+          <div className="mt-8 text-center text-sm text-gray-400">
+            &copy; {new Date().getFullYear()} AI AETHRA CLUB. All rights reserved.
+          </div>
+        </div>
+      </footer>
 
       {/* Event Announcement Popup... Important line hai hamesha update karna hai and remove karna hai is no event*/}
       {showEventPopup && (
@@ -255,7 +274,7 @@ const Home = () => {
             className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-md w-full mx-4 overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="bg-gradient-to-r from-green-500 to-blue-500 p-6 text-white relative">
+      <div className="bg-gradient-to-r from-sky-500 to-blue-700 p-6 text-white relative">
               <button
                 onClick={closeEventPopup}
                 className="absolute top-4 right-4 p-2 hover:bg-white/20 rounded-full transition-colors"
@@ -275,22 +294,22 @@ const Home = () => {
 
             <div className="p-6">
               <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">
-                🎉 GFG - CodeFlex
+                🎉 AI AETHRA- MODELFORGE
               </h4>
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                🌟 CodeFlex is our Monthly Project Submission Contest, open to all SE and TE developers and innovators from TCET. 
+                🌟 MODELFORGE is our Machine Learning Project Submission Contest, open to all SE and TE developers and innovators from TCET. 
   Whether it's a beginner-level project or an advanced build, your effort matters! 🚀<br /><br />
   🔒 The event is now closed. ✅ Go and check out the results!
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3">
-                <Link
+                  <Link
                   to="/events"
                   onClick={() => {
                     closeEventPopup();
                     sessionStorage.setItem('react-router-navigation', 'true');
                   }}
-                  className="flex-1 bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-3 rounded-lg font-medium hover:from-green-600 hover:to-green-700 transition-all duration-300 flex items-center justify-center space-x-2 group"
+                  className="flex-1 bg-gradient-to-r from-sky-500 to-blue-700 text-white px-4 py-3 rounded-lg font-medium hover:from-sky-600 hover:to-blue-800 transition-all duration-300 flex items-center justify-center space-x-2 group"
                 >
                   <span>View Result</span>
                   <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

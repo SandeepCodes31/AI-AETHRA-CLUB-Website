@@ -10,15 +10,12 @@ import sarthak_raut from '../assets/Team-2024-2025/photo/sarthak_raut.png';
 import tanisa_belel from '../assets/Team-2024-2025/photo/tanisa_belel.png';
 
 export const recentEvents = [
-  { title: 'Technical Interview Preparation', date: 'Jun 2025', type: 'Workshop' },
- { title: 'Technical Interview Preparation', date: 'Jun 2025', type: 'Workshop' },
-  { title: 'Technical Interview Preparation', date: 'Jun 2025', type: 'Workshop' },
+  { title: 'AI Model Poster Competition', date: 'August 2025', type: 'Competition' },
+  { title: 'Modelforge', date: 'October 2025', type: 'Upcoming Event' }
 ];
 
 export const pastEvents = [
-  { title: 'Clash of coders', date: 'Jan 2023', summary: 'An Online Coding Contest that will be hosted via Hackerrank.com platform.' },
-  { title: 'Auto Run Final', date: 'Dec 2022', summary: 'GFG presents an Annual Coding Contest "AUTO-RUN Season-1 Final`s" exclusively for GFG Student Chapters campus. ' },
-  { title: 'Runtime Terror Contest', date: 'Oct 2022', summary: 'A Multi-round Online Coding Contest that was hosted via Google Forms & Hackerrank.com platform.' },
+  { title: 'AI Model Poster Competition', date: 'August 2025', type: 'Competition', summary: 'A competition where students submit their unique AI model posters to compete. Projects are judged based on creativity, execution, technical depth, and presentation.' },
 ];
 
 export const homeTeamMembers = [
@@ -36,42 +33,42 @@ export const projectOfMonth = {
   github: '#'
 };
 
-export const teamTestimonials2024_2025 = [
+export const teamTestimonials2025_2026 = [
   {
     name: 'Khushi Tiwari',
     role: 'Chairperson',
     image: khushi_tiwari,
-    quote: 'Leading the GFG-TCET chapter in 2024-25 has been an incredible journey of growth and innovation. We focused on building a stronger technical community and expanding our reach to help more students discover their passion for coding.'
+    quote: 'Leading the AI Aethra Club in 2025-26 has been an incredible journey of growth and innovation. We focused on building a stronger technical community and expanding our reach to help more students discover their passion for AI and coding.'
   },
   {
     name: 'Ayesha Singh',
     role: 'Vice Chairperson',
     image: ayesha_singh,
-    quote: 'Working alongside such a dedicated team taught me the true meaning of collaboration. Together, we organized impactful events that bridged the gap between theoretical knowledge and practical application in technology.'
+    quote: 'Working alongside such a dedicated team taught me the true meaning of collaboration. Together, we organized impactful events that bridged the gap between theoretical knowledge and practical application in AI technology.'
   },
   {
     name: 'Aman Maurya',
     role: 'Technical Head',
     image: aman_maurya,
-    quote: 'As Technical Head, I had the privilege of mentoring fellow students and organizing workshops that prepared them for industry challenges. Seeing their growth and success has been the most rewarding experience.'
+    quote: 'As Technical Head, I had the privilege of mentoring fellow students and organizing workshops that prepared them for industry challenges in AI. Seeing their growth and success has been the most rewarding experience.'
   },
   {
     name: 'Aishwarya Jadhav',
     role: 'Marketing Head',
     image: aishwarya_jadhav,
-    quote: 'Building the GFG-TCET brand and reaching out to students across campus was both challenging and fulfilling. Our marketing efforts helped create awareness about the amazing opportunities available in the tech world.'
+    quote: 'Building the AI Aethra Club brand and reaching out to students across campus was both challenging and fulfilling. Our marketing efforts helped create awareness about the amazing opportunities available in the AI world.'
   },
   {
     name: 'Shivam Thakur',
     role: 'Event Head',
     image: shivam_thakur,
-    quote: 'Organizing technical events and coding competitions taught me valuable project management skills. Every successful event was a testament to our team\'s dedication and the enthusiasm of our participants.'
+    quote: 'Organizing technical events and AI competitions taught me valuable project management skills. Every successful event was a testament to our team\'s dedication and the enthusiasm of our participants.'
   },
   {
     name: 'Siddhi Naik',
     role: 'Graphics Head',
     image: siddhi_naik,
-    quote: 'Creating visual content and designing promotional materials for GFG-TCET allowed me to blend creativity with technology. Every design told a story and helped build our community\'s identity.'
+    quote: 'Creating visual content and designing promotional materials for AI Aethra Club allowed me to blend creativity with technology. Every design told a story and helped build our community\'s identity.'
   },
   {
     name: 'Shubham Gupta',
@@ -83,11 +80,11 @@ export const teamTestimonials2024_2025 = [
     name: 'Harish Pandey',
     role: 'Web Head',
     image: harish_pandey,
-    quote: 'Developing and maintaining our web presence was both technically challenging and creatively rewarding. Our digital platforms became the foundation for connecting with students and sharing valuable resources.'
+    quote: 'Developing and maintaining our web presence was both technically challenging and creatively rewarding. Our digital platforms became the foundation for connecting with students and sharing valuable AI resources.'
   }
 ];
 
-export const extendedCoreTestimonials2024_2025 = [
+export const extendedCoreTestimonials2025_2026 = [
   {
     name: 'Shubham Gupta',
     role: 'Logistics Head',
@@ -104,13 +101,13 @@ export const extendedCoreTestimonials2024_2025 = [
     name: 'Sarthak Raut',
     role: 'PR Outreach Head',
     image: sarthak_raut,
-    quote: 'Connecting with industry professionals and building partnerships opened doors to incredible opportunities for our chapter. Every outreach effort helped expand our network and bring valuable insights to our community.'
+    quote: 'Connecting with industry professionals and building partnerships opened doors to incredible opportunities for our club. Every outreach effort helped expand our network and bring valuable insights to our community.'
   },
   {
     name: 'Tanisa Belel',
     role: 'Social Media Head',
     image: tanisa_belel,
-    quote: 'Managing our social media presence allowed me to showcase the vibrant culture of GFG-TCET. Creating engaging content and building our online community was an exciting blend of creativity and strategy.'
+    quote: 'Managing our social media presence allowed me to showcase the vibrant culture of AI Aethra Club. Creating engaging content and building our online community was an exciting blend of creativity and strategy.'
   }
 ];
 

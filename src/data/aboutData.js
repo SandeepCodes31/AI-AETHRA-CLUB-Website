@@ -3,8 +3,8 @@ import { Users, Calendar,MapPin, ExternalLink } from 'lucide-react';
 export const stats = [
   { label: 'Active Core Members', value: '10+', icon: Users },
   { label: 'Active Working Members', value: '14+', icon: Users },
-  { label: 'Events Conducted 2025', value: '0+', icon: Calendar },
-  { label: 'Years Active', value: '4+', icon: MapPin },
+  { label: 'Events Conducted 2025', value: '2+', icon: Calendar },
+  { label: 'Years Active', value: '1+', icon: MapPin },
 ];
 
 export const achievements = [

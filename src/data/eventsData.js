@@ -1,66 +1,30 @@
-import clash_of_coders from '../assets/Team-2022-2023/events/clash_of_coders.png';
-import codeflex from '../assets/Team-2025-2026/event/codeflex.jpg';
+import modelforgeImg from '../assets/modelforge.jpg';
 
 export const upcomingEvents = [
   {
     id: 1,
-    title: 'GFG CodeFlex',
-    date: '01-08-2025 to 21-08-2025',
-    time: '9:00 AM',
-    location: 'Online',
-    description: 'Build an innovative project and showcase your technical creativity! GFG CodeFlex is a monthly coding initiative where students can submit their unique projects to compete. Projects are judged based on creativity, execution, technical depth, and presentation. Winners will be featured on GFG socials and can earn certificates and recognition!',
-    participants: 500,
+    title: 'ModelForge',
+    date: '6th October 2025',
+    location: 'Offline',
+    description: 'ModelForge is an exciting model training competition where participants build and train machine learning models to solve real-world problems. Teams compete to achieve the highest accuracy and efficiency in their models, showcasing innovative approaches to data science and AI. Join us to test your skills in model development, optimization, and deployment in a competitive environment.',
+    participants: 'TBD',
     category: 'Competition',
-    spots: 'Individual Participation',
-    registrationLink: 'https://forms.gle/6EPterrEZQ9zuVVG6',
-    image: codeflex,
-    status: 'closed'
+    spots: 'Team Participation (3 members)',
+    registrationLink: '',
+  image: modelforgeImg,
+    status: 'upcoming'
   },
 ];
 
 export const pastEvents = [
   {
     id: 1,
-    title: 'Clash of coders',
-    date: '01-01-2023',
-    location: 'TCET Campus',
-    participants: 100,
-    category: 'Contest',
-    images: clash_of_coders,
-    summary: 'An Online Coding Contest that will be hosted via Hackerrank.com platform. Objective To help students become aware of their knowledge in DSA.'
-  },
-  {
-    id: 2,
-    title: 'Data Structures Deep Dive',
-    date: '2024-11-20',
-    location: 'Lab 205',
-    description: 'Comprehensive workshop on advanced data structures',
-    participants: 80,
-    category: 'Workshop',
-    images: ['/api/placeholder/300/200'],
-    summary: 'Interactive workshop covering trees, graphs, and advanced algorithms with hands-on coding sessions.'
-  },
-  {
-    id: 3,
-    title: 'Open Source Contribution Drive',
-    date: '2024-10-30',
-    location: 'Virtual',
-    description: 'Learn how to contribute to open source projects',
-    participants: 120,
-    category: 'Workshop',
-    images: ['/api/placeholder/300/200'],
-    summary: 'Students learned about Git, GitHub, and made their first contributions to open source projects.'
-  },
-  {
-    id: 4,
-    title: 'Machine Learning Fundamentals',
-    date: '2024-09-25',
-    location: 'Auditorium',
-    description: 'Introduction to ML algorithms and practical applications',
-    participants: 180,
-    category: 'Seminar',
-    images: ['/api/placeholder/300/200', '/api/placeholder/300/200'],
-    summary: 'Industry expert from Google explained ML concepts with real-world examples and career guidance.'
+    title: 'AI Model poster competition',
+    date: '',
+    location: '',
+    participants: '',
+    category: '',
+    summary: ''
   }
 ];
 

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { Calendar, MapPin, Users, ExternalLink, Clock, Tag, X, Send, Eye } from 'lucide-react';
+import { Calendar, MapPin, Users, ExternalLink, Tag, X, Send, Eye } from 'lucide-react';
 import { upcomingEvents, pastEvents, getCategoryColor } from '../data/eventsData';
 import { getEventResults, hasResults } from '../data/resultsData';
 import Swal from 'sweetalert2';
@@ -103,7 +103,7 @@ const Events = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
-      <section className="pt-24 pb-16 bg-gradient-to-r from-green-500/10 to-blue-500/10">
+      <section className="pt-24 pb-16 bg-gradient-to-r from-sky-200/10 to-blue-500/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -111,7 +111,7 @@ const Events = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-6 dark:from-green-300 dark:to-blue-300">Events</h1>
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-sky-600 to-blue-700 bg-clip-text text-transparent mb-6 dark:from-sky-300 dark:to-blue-400">Events</h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">Join our workshops, contests, and seminars to enhance your skills and connect with fellow developers</p>
           </motion.div>
         </div>
@@ -129,7 +129,7 @@ const Events = () => {
                 onClick={() => setActiveTab(tab.id)}
                 className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                   activeTab === tab.id
-                    ? 'bg-gradient-to-r from-green-500 to-blue-500 text-white shadow-lg'
+                    ? 'bg-gradient-to-r from-sky-500 to-blue-700 text-white shadow-lg'
                     : 'bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300'
                 }`}
                 whileHover={{ scale: 1.05 }}
@@ -168,7 +168,7 @@ const Events = () => {
                           onClick={() => handleImageClick(event.image, event.title)}
                         />
                       ) : (
-                        <div className="h-48 bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center">
+                        <div className="h-48 bg-gradient-to-r from-sky-400 to-blue-600 flex items-center justify-center">
                           <Calendar className="w-16 h-16 text-white" />
                         </div>
                       )}
@@ -202,10 +202,6 @@ const Events = () => {
                         <div className="flex items-center text-gray-600 dark:text-gray-400">
                           <Calendar className="w-4 h-4 mr-2" />
                           <span className="text-sm">{event.date}</span>
-                        </div>
-                        <div className="flex items-center text-gray-600 dark:text-gray-400">
-                          <Clock className="w-4 h-4 mr-2" />
-                          <span className="text-sm">{event.time}</span>
                         </div>
                         <div className="flex items-center text-gray-600 dark:text-gray-400">
                           <MapPin className="w-4 h-4 mr-2" />
@@ -244,11 +240,11 @@ const Events = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           className={`w-full py-3 px-4 rounded-lg font-semibold text-center inline-flex items-center justify-center space-x-2 transition-all duration-300 mt-auto ${
-                            event.status === 'live' 
-                              ? 'bg-gradient-to-r from-green-500 to-blue-500 text-white hover:from-green-600 hover:to-blue-600 animate-pulse' 
+                            event.status === 'live'
+                              ? 'bg-gradient-to-r from-sky-500 to-blue-700 text-white hover:from-sky-600 hover:to-blue-800 animate-pulse'
                               : event.status === 'closed'
                               ? 'bg-gray-400 text-gray-200 cursor-not-allowed'
-                              : 'bg-gradient-to-r from-green-500 to-blue-500 text-white hover:from-green-600 hover:to-blue-600'
+                              : 'bg-gradient-to-r from-sky-500 to-blue-700 text-white hover:from-sky-600 hover:to-blue-800'
                           }`}
                           whileHover={{ scale: event.status === 'closed' ? 1 : 1.02 }}
                           whileTap={{ scale: event.status === 'closed' ? 1 : 0.98 }}
@@ -291,7 +287,7 @@ const Events = () => {
                   >
                     <div className="lg:flex">
                       <div className="lg:w-1/3">
-                        <div className="h-64 lg:h-full bg-gradient-to-r from-purple-400 to-pink-500 flex items-center justify-center overflow-hidden border-r border-black">
+                        <div className="h-64 lg:h-full bg-gradient-to-r from-sky-400 to-blue-600 flex items-center justify-center overflow-hidden border-r border-black">
                           <img 
                             src={event.images} 
                             alt={event.title}
@@ -333,7 +329,7 @@ const Events = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-r from-green-500 to-blue-600">
+      <section className="py-20 bg-gradient-to-r from-sky-500 to-blue-400">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -345,7 +341,7 @@ const Events = () => {
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">We're always open to new ideas and collaborations. Share your event proposal with us!</p>            
             <motion.button
               onClick={() => setShowEventModal(true)}
-              className="bg-white text-green-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg"
+              className="bg-white text-sky-400 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -376,7 +372,7 @@ const Events = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Your Name *</label>
-                  <input type="text" id="name" name="name" value={eventFormData.name} onChange={handleEventInputChange} required className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors" placeholder="Enter your full name"/>
+                  <input type="text" id="name" name="name" value={eventFormData.name} onChange={handleEventInputChange} required className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors" placeholder="Enter your full name"/>
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email Address *</label>
@@ -451,8 +447,8 @@ const Events = () => {
                 <motion.button
                   type="submit"
                   disabled={isSubmittingEvent}
-                  className={`px-6 py-3 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg font-semibold transition-all duration-300 flex items-center space-x-2 ${
-                    isSubmittingEvent ? 'opacity-70 cursor-not-allowed' : 'hover:from-green-600 hover:to-blue-600'
+                  className={`px-6 py-3 bg-gradient-to-r from-sky-400 to-yellow-400 text-white rounded-lg font-semibold transition-all duration-300 flex items-center space-x-2 ${
+                    isSubmittingEvent ? 'opacity-70 cursor-not-allowed' : 'hover:from-sky-500 hover:to-yellow-500'
                   }`}
                   whileHover={{ scale: isSubmittingEvent ? 1 : 1.05 }}
                   whileTap={{ scale: isSubmittingEvent ? 1 : 0.95 }}
