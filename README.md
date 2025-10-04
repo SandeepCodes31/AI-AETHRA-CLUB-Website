@@ -1,16 +1,16 @@
 <<<<<<< HEAD
 
-# 🚀 GFG TCET - Official Chapter Website
+# 🚀 AI AETHRA TCET - Official  Website
 
 <div align="center">
-  <img src="./public/gfg-gg-logo.svg" alt="GFG TCET Logo" width="200"/>
+  <img src="./src/assets/club_logo.png" alt="AI AETHRA TCET Logo" width="200"/>
   
   [![React](https://img.shields.io/badge/React-18.0+-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
   [![Vite](https://img.shields.io/badge/Vite-5.0+-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
   [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0+-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
   [![Framer Motion](https://img.shields.io/badge/Framer_Motion-10.0+-0055FF?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
   
-  **Modern, Responsive & Animated Website for GeeksforGeeks Chapter**  
+  **Modern, Responsive & Animated Website for AI AETHRA TCET**  
   **Thakur College of Engineering and Technology**
 </div>
 
@@ -35,11 +35,11 @@
 
 ## 🌟 About
 
-The **GFG TCET Website** is the official digital presence of the GeeksforGeeks Chapter at Thakur College of Engineering and Technology. This modern, fully responsive web application serves as a comprehensive platform for students, faculty, and coding enthusiasts to stay connected with our vibrant tech community.
+The **AI AETHRA TCET Website** is the official digital presence of the AI AETHRA at Thakur College of Engineering and Technology. This modern, fully responsive web application serves as a comprehensive platform for students, faculty, and coding enthusiasts to stay connected with our vibrant tech community.
 
 ### 🎯 Purpose
 
-- **Community Hub**: Central platform for all GFG TCET activities
+- **Community Hub**: Central platform for all AI AETHRA TCET activities
 - **Event Management**: Showcase upcoming and past events
 - **Team Showcase**: Highlight our talented team members across different years
 - **Project Gallery**: Display innovative projects and achievements
@@ -128,8 +128,8 @@ The **GFG TCET Website** is the official digital presence of the GeeksforGeeks C
 
 ### 👥 **Team Page**
 
-- **Year-wise Navigation**: Browse teams by academic year (2022-2026)
-- **Role-based Sections**: Core Team, Extended Team, Working Committee
+- **Year-wise Navigation**: Browse teams by academic year (2025-2026)
+- **Role-based Sections**: Core Team, Working Committee
 - **Member Profiles**: Photos, names, positions, and social links
 - **Responsive Grid**: Uniform card layouts across all devices
 
@@ -160,12 +160,6 @@ The **GFG TCET Website** is the official digital presence of the GeeksforGeeks C
 ---
 
 ## 🎨 Design Highlights
-
-### **Color Scheme**
-
-- **Primary**: Green (#10B981) to Blue (#3B82F6) gradients
-- **Dark Mode**: Gray (#111827) with accent colors
-- **Light Mode**: Clean whites with subtle gray backgrounds
 
 ### **Typography**
 
@@ -201,8 +195,10 @@ The **GFG TCET Website** is the official digital presence of the GeeksforGeeks C
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/Prince200510/GFG-TCET.git
-cd GFG-TCET
+git clone https://github.com/Prince200510/GFG-TCET.git 
+git clone https://github.com/SandeepCodes31/AI-AETHRA-CLUB-Website.git
+cd AI AETHRA-TCET
+
 ```
 
 2. **Install dependencies**
@@ -241,46 +237,6 @@ yarn build
 npm run preview
 # or
 yarn preview
-```
-
----
-
-## 📁 Project Structure
-
-```
-gfg-tcet-website/
-├── public/                 # Static assets
-│   ├── gfg-gg-logo.svg    # Club logo
-│   └── vite.svg           # Vite logo
-├── src/
-│   ├── assets/            # Images and media files
-│   │   ├── gfg_home.gif   # Homepage background
-│   │   ├── gfg_tcet_logo.jpg
-│   │   └── Team-2022-2023/ # Team member photos
-│   ├── components/        # Reusable components
-│   │   └── Navbar.jsx     # Navigation component
-│   ├── data/             # Data management
-│   │   ├── aboutData.js   # About page content
-│   │   ├── eventsData.js  # Events information
-│   │   ├── homeData.js    # Homepage content
-│   │   ├── projectsData.js # Projects showcase
-│   │   └── teamData.js    # Team member details
-│   ├── pages/            # Main page components
-│   │   ├── About.jsx     # About page
-│   │   ├── Contact.jsx   # Contact page
-│   │   ├── Events.jsx    # Events page
-│   │   ├── Home.jsx      # Homepage
-│   │   ├── Projects.jsx  # Projects page
-│   │   └── Team.jsx      # Team page
-│   ├── App.jsx           # Main app component
-│   ├── main.jsx          # Entry point
-│   └── index.css         # Global styles
-├── eslint.config.js      # ESLint configuration
-├── package.json          # Dependencies and scripts
-├── postcss.config.js     # PostCSS configuration
-├── tailwind.config.js    # Tailwind CSS configuration
-├── vite.config.js        # Vite configuration
-└── README.md            # Project documentation
 ```
 
 ---
@@ -377,7 +333,7 @@ export default defineConfig({
 <div align="center">
   
   ### **Prince Maurya**
-  *Full Stack Developer & GFG TCET Website Creator*
+  *Full Stack Developer & AI AETHRA Website Creator*
   
   **Academic Year**: 2025-2026  
   **Institution**: Thakur College of Engineering and Technology
@@ -423,17 +379,15 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
   
   ### 🌟 **Star this repository if you found it helpful!** 🌟
   
-  **Made with ❤️ by Prince Maurya**  
+  **Made with ❤️ by Prince Maurya && Sandeep Pal**
+  
   **Academic Year 2025-2026**
   
   ---
   
-  **© 2025 GFG TCET Chapter. All rights reserved.**
+  **© 2025 AI AETHRA TCET. All rights reserved.**
   
-  *This website is part of the GeeksforGeeks Student Chapter program at Thakur College of Engineering and Technology.*
+  *This website is part of the AI AETHRA program at Thakur College of Engineering and Technology.*
   
 </div>
-=======
-# GFG-TCET
-🎓 GFG-TCET Official Website – A responsive and dynamic website built for the GeeksforGeeks Student Chapter at Thakur College of Engineering and Technology (TCET), showcasing events, team members, resources, and more.
->>>>>>> b75ed84d0627ff3a2451313a128e967428a01f89
+
